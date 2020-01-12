@@ -12,10 +12,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-backend-{{ checksum "backend/package.json" }}
+          key: dependency-cache-backend-{{ checksum "package.json" }}
       - run: cd backend && npm install
       - save_cache: 
-          key: dependency-cache-backend-{{ checksum "backend/package.json" }}
+          key: dependency-cache-backend-{{ checksum "package.json" }}
           paths:
             - ./backend/node_modules
       - run:
