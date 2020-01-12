@@ -12,12 +12,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-backend-{{ checksum "package.json" }}
-      - run: cd backend && npm install
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
       - save_cache: 
-          key: dependency-cache-backend-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
-            - ./backend/node_modules
+            - ./node_modules
       - run:
       # Our primary container isn't MYSQL so run a sleep command until it's ready.
           name: Waiting for MySQL to be ready
@@ -29,8 +29,8 @@ jobs:
               sleep 1
             done
             echo Failed waiting for MySQL && exit 1
-      - run: cd backend && npm run create_test_db
-      - run: cd backend && npm test
+      - run: npm run create_test_db
+      - run: npm test
       
 workflows:
   test-build-deploy:
