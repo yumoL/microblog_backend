@@ -1,0 +1,54 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prd": "NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon --inspect=9229 index.js",
+    "test": "NODE_ENV=test jest --runInBand --forceExit --colors",
+    "lint": "eslint --ext .js .",
+    "build:ui": "rm -rf build && cd ../microblog_frontend && npm run build && cp -r build ../microblog_backend",
+    "createdb": "./node_modules/.bin/sequelize db:create",
+    "migrate": "./node_modules/.bin/sequelize db:migrate",
+    "dropdb": "./node_modules/.bin/sequelize db:drop",
+    "create_test_db": "./node_modules/.bin/sequelize db:drop --env test; ./node_modules/.bin/sequelize db:create --env test; ./node_modules/.bin/sequelize db:migrate --env test;"
+  },
+  "author": "yumoL",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "ajv": "^6.10.2",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^3.6.0",
+    "koa-logger": "^3.2.1",
+    "koa-mount": "^4.0.0",
+    "koa-onerror": "^4.1.0",
+    "koa-redis": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.2.1",
+    "mysql2": "^2.0.1",
+    "redis": "^2.8.0",
+    "sequelize": "^5.21.2",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.7.0",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "pre-commit": "^1.2.2",
+    "supertest": "^4.0.2"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
