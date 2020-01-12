@@ -5,10 +5,13 @@ jobs:
   test_backend:
     docker:
       - image: circleci/node:10
-        environment:
       - image: circleci/mysql:8.0.18
         environment:
           MYSQL_ROOT_PASSWORD: password
+    environment:
+      DEFAULT_PICTURE: https://icon-library.net/icon/default-user-icon-14.html
+      JWT_SECRET_KEY: Luan_7788$#
+      CRYPRO_SECRET_KEY: MIma_@$
     steps:
       - checkout
       - restore_cache:
