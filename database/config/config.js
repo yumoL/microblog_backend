@@ -18,10 +18,10 @@ module.exports = {
     operatorsAlises: false
   },
   production: {
-    username: `${process.env.DB_USER}`,
-    password: `${process.env.DB_PASSWORD}`,
-    database: `${process.env.DB_NAME}`,
-    host: `${process.env.DB_HOST}`,
+    username: 'baeff011141a50',
+    password: 'ced0d695',
+    database: 'heroku_53cefc1c015b399',
+    host: 'us-cdbr-iron-east-05.cleardb.net',
     dialect: 'mysql',
     operatorsAlises: false
   }
