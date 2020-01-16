@@ -1,2 +1,3 @@
-#./node_modules/.bin/sequelize db:create --env production
+#!/bin/sh
+
 ./node_modules/.bin/sequelize db:migrate --env production
