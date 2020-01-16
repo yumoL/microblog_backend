@@ -15,6 +15,7 @@ if (config.use_env_variable) {
 } else {
   console.log('no env')
   sequelize = new Sequelize(config.database, config.username, config.password, config)
+  console.log(config.database)
 }
 
 fs
