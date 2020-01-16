@@ -7,7 +7,6 @@ const basename = path.basename(__filename)
 const env = process.env.NODE_ENV || 'development'
 const config = require(__dirname + '/../config/config.js')[env]
 const db = {}
-require('dotenv').config()
 
 let sequelize
 if (config.use_env_variable) {
@@ -15,7 +14,7 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config)
   console.log('env', env)
-  console.log(config.database)
+  console.log(config)
 }
 
 fs
