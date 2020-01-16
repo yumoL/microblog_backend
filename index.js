@@ -7,7 +7,9 @@ const port = normalizePort(process.env.PORT || '3003')
 
 const server = http.createServer(app.callback())
 
-server.listen(port)
+server.listen(port, () => {
+  console.log(`server listen at ${port}`)
+})
 //server.on('error', onError)
 //server.on('listening', onListening)
 
