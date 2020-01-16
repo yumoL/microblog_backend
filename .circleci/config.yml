@@ -34,8 +34,16 @@ jobs:
             echo Failed waiting for MySQL && exit 1
       - run: npm run create_test_db
       - run: npm test
-      
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/deploy-via-git:
+          only-branch: master
+     
 workflows:
   test-build-deploy:
     jobs:
       - test_backend
+      - deploy
