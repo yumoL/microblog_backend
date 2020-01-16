@@ -11,5 +11,6 @@
 |       | 1.5  | login and register in frontend|
 |       | 1.5  | redirect to login page if not log in and to home page if already log in|
 |       | 2    | test login and register in frontend |
+| 16.1  | 2.5  | learn script, deploy app to heroku with CircleCI| 
 
 
