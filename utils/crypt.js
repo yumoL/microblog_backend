@@ -3,6 +3,7 @@
  */
 
 const crypto = require('crypto')
+const { CRYPRO_SECRET_KEY }=require('../constants')
 require('dotenv').config()
 
 
@@ -17,10 +18,10 @@ function _md5(content) {
 
 /**
  * cryption
- * @param {string} content 
+ * @param {string} content
  */
 function doCrypto(content) {
-  const str = `password=${content}&key=${process.env.CRYPRO_SECRET_KEY}`
+  const str = `password=${content}&key=${process.env.CRYPRO_SECRET_KEY || CRYPRO_SECRET_KEY}`
   return _md5(str)
 }
 

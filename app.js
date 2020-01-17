@@ -18,6 +18,8 @@ const index = require('./routes/index')
 const userApiRouter = require('./routes/user')
 const otherRouter = require('./routes/other')
 
+const { JWT_SECRET_KEY }=require('./constants')
+
 // error handler
 onerror(app)
 
@@ -36,7 +38,7 @@ app.use(otherRouter.routes(), otherRouter.allowedMethods())
 
 //jwt config
 app.use(jwtKoa({
-  secret: process.env.JWT_SECRET_KEY
+  secret: process.env.JWT_SECRET_KEY || JWT_SECRET_KEY
 }).unless({
   path: [/^\/api\/user\/login|^\/api\/user\/register|^\/api\/user\/isExist/]
 }))

@@ -2,6 +2,7 @@
  * @description format data
  */
 require('dotenv').config()
+const { DEFAULT_PICTURE } = require('../constants')
 
 /**
  * defaulted user's picture
@@ -9,7 +10,7 @@ require('dotenv').config()
  */
 function _formatUserPicture(userObj) {
   if (userObj.picture == null) {
-    Object.picture = process.env.DEFAULT_PICTURE
+    Object.picture = process.env.DEFAULT_PICTURE || DEFAULT_PICTURE
   }
   return userObj
 }

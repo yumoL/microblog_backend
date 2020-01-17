@@ -10,11 +10,12 @@ const { userNameNotExistInfo,
   loginFailInfo
 } = require('../model/ErrorInfo')
 const doCrypto = require('../utils/crypt')
+const { JWT_SECRET_KEY } = require('../constants')
 require('dotenv').config()
 
 /**
   * Check if a username is existed
-  * @param {string} userName 
+  * @param {string} userName
   */
 async function isExist(userName) {
   const userInfo = await getUserInfo(userName)
@@ -26,7 +27,7 @@ async function isExist(userName) {
 
 /**
  * register
- * @param {*} param0 
+ * @param {*} param0
  */
 async function register(ctx, userName, password) {
   const userInfo = await getUserInfo(userName)
@@ -54,7 +55,7 @@ async function login(ctx, userName, password) {
     ctx.status = 401
     return new ErrorModel(loginFailInfo)
   }
-  const token = jwt.sign(userInfo, process.env.JWT_SECRET_KEY, { expiresIn: '1h' })
+  const token = jwt.sign(userInfo, process.env.JWT_SECRET_KEY || JWT_SECRET_KEY, { expiresIn: '1h' })
   userInfo = {
     token,
     ...userInfo
