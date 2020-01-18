@@ -1,11 +1,14 @@
 # Microblog
 This is a microblog application where people can share their thoughts and opinions with others. 
 
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
+
+
 Possible features
 - Register and log in to the application
-- Add, modify and delete own blogs
-- Follow other users and comment on their blogs
-- Live chat with other users
+- Add, modify and delete own blogs (unfinished)
+- Follow other users and comment on their blogs(unfinished)
+- Live chat with other users(unfinished)
 
 This repository is the backend of the microblog app.
 
