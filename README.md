@@ -9,6 +9,12 @@ Possible features
 
 This repository is the backend of the microblog app.
 
+[Demo](http://microblogdevops.herokuapp.com/home)
+
 [Frontend](https://github.com/yumoL/microblog_client)
 
 [Hour Accounting](https://github.com/yumoL/microblog_backend/blob/master/hour_accounting.md)
+
+### For development
+- Clone the repository
+`git clone git@github.com:yumoL/microblog_backend.git`
