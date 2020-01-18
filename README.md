@@ -29,3 +29,14 @@ This repository is the backend of the microblog app.
 `docker-compose up`
 
 If you haven't installed docker or docker-compose, please check the download instructions for [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
+
+- Create database for development and migrate the schemas
+
+`npm run createdb`
+`npm run migrate`
+
+- Run the app with development mode
+
+`npm run dev`
+
+The app will start at http://localhost:3003/home
