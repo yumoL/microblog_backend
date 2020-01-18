@@ -2,7 +2,7 @@
 This is a microblog application where people can share their thoughts and opinions with others. 
 
 Possible features
-- Register to the application
+- Register and log in to the application
 - Add, modify and delete own blogs
 - Follow other users and comment on their blogs
 - Live chat with other users
