@@ -1,7 +1,7 @@
 # Microblog
 This is a microblog application where people can share their thoughts and opinions with others. 
 
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
+[![CircleCI](https://circleci.com/gh/yumoL/microblog_backend.svg?style=svg)](https://circleci.com/gh/yumoL/microblog_backend)
 
 
 Possible features
