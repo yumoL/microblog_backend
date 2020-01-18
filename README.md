@@ -17,4 +17,15 @@ This repository is the backend of the microblog app.
 
 ### For development
 - Clone the repository
+
 `git clone git@github.com:yumoL/microblog_backend.git`
+
+- Install dependencies
+
+`npm install`
+
+- Start MySQL and Redis using docker images
+
+`docker-compose up`
+
+If you haven't installed docker or docker-compose, please check the download instructions for [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
