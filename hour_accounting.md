@@ -18,4 +18,5 @@
 |       | 2.5  | find a solution to solve the problem where token is not valid if user name or password has been changed|
 |25.1   | 3  | frontend to change user information (services+reducer+view), find a solution to get the url of uploaded file|
 |       | 1.5 |try different ways to handle jwt-token expiration in frontend|
+|26.1   | 1   | test change user info api|
 
