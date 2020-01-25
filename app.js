@@ -8,8 +8,6 @@ const logger = require('koa-logger')
 const cors = require('@koa/cors')
 const jwtKoa = require('koa-jwt')
 const serve = require('koa-static')
-// const mount = require('koa-mount')
-// const static_pages = new Koa()
 
 //const { REDIS_CONF } = require('./conf/config')
 require('dotenv').config()
@@ -17,6 +15,7 @@ require('dotenv').config()
 const index = require('./routes/index')
 const userApiRouter = require('./routes/user')
 const otherRouter = require('./routes/other')
+const utilsApiRouter = require('./routes/utils')
 
 const { JWT_SECRET_KEY }=require('./constants')
 
@@ -24,11 +23,23 @@ const { JWT_SECRET_KEY }=require('./constants')
 onerror(app)
 
 app.use(serve('build'))
+app.use(serve('uploadedFiles'))
 
 // middlewares
 app.use(cors())
+app.use(async(ctx,next) => {
+  if(ctx.path.includes('upload')) {
+    ctx.disableBodyParser = true
+  }
+  await next()
+})
 app.use(bodyparser({
-  enableTypes: ['json', 'form', 'text']
+  enableTypes: ['json', 'form', 'text'],
+  formLimit: 1024*1024*1024,
+  multipart:true,
+  onerror: function(err,ctx){
+    console.log(err)
+  }
 }))
 app.use(json())
 app.use(logger())
@@ -46,6 +57,7 @@ app.use(jwtKoa({
 // api routes
 app.use(index.routes(), index.allowedMethods())
 app.use(userApiRouter.routes(), userApiRouter.allowedMethods())
+app.use(utilsApiRouter.routes(), utilsApiRouter.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {

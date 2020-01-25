@@ -2,11 +2,11 @@
  * @description middleware to validate data using json schema
  */
 const { ErrorModel } = require('../model/ResModel')
-const {jsonSchemaFailInfo} = require('../model/ErrorInfo')
+const { jsonSchemaFailInfo } = require('../model/ErrorInfo')
 
 /**
  * generate validation middleware
- * @param {function} validateFunction 
+ * @param {function} validateFunction
  */
 function genValidator(validateFunction) {
   async function validator(ctx, next){

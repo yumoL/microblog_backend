@@ -2,12 +2,14 @@
  * @description user controller
  */
 const jwt = require('jsonwebtoken')
-const { getUserInfo, createUser } = require('../services/user')
+const { getUserInfo, createUser, updateUser } = require('../services/user')
 const { SuccessModel, ErrorModel } = require('../model/ResModel')
 const { userNameNotExistInfo,
   registerUsernameExistInfo,
   registerFailInfo,
-  loginFailInfo
+  loginFailInfo,
+  changeInfoFailInfo,
+  changePwdFailInfo
 } = require('../model/ErrorInfo')
 const doCrypto = require('../utils/crypt')
 const { JWT_SECRET_KEY } = require('../constants')
@@ -49,8 +51,12 @@ async function register(ctx, userName, password) {
   }
 }
 
-async function login(ctx, userName, password) {
-  let userInfo = await getUserInfo(userName, doCrypto(password))
+/**
+ * log in function
+ * @param {*} needCrypto need to encrypt the password in plain text
+ */
+async function login(ctx, userName, password, needCrypto = true) {
+  let userInfo = await getUserInfo(userName, needCrypto ? doCrypto(password): password)
   if (!userInfo) {
     ctx.status = 401
     return new ErrorModel(loginFailInfo)
@@ -63,9 +69,44 @@ async function login(ctx, userName, password) {
   return new SuccessModel(userInfo)
 }
 
+/**
+ * Change user basic info
+ */
+async function changeInfo(ctx, { newUserName, newPicture }, id){
+  const updatedUser = await updateUser(
+    { newUserName, newPicture },
+    id
+  )
+  if(updatedUser!==null){
+    const { userName, password } = updatedUser
+    //do not need to encrypt password since we get this password directly from database
+    return login(ctx, userName, password, false )
+  }
+  ctx.status = 400
+  return new ErrorModel(changeInfoFailInfo)
+}
+
+/**
+ * Changw password
+ */
+async function changePwd (ctx, { pwd, newPwd }, id){
+  const updatedUser = await updateUser(
+    { newPwd },
+    id, pwd
+  )
+  if(updatedUser!==null){
+    const { userName, password } = updatedUser
+    return login(ctx, userName, password, false)
+  }
+  ctx.status = 400
+  return new ErrorModel(changePwdFailInfo)
+}
+
 module.exports = {
   isExist,
   register,
-  login
+  login,
+  changeInfo,
+  changePwd
 }
 
