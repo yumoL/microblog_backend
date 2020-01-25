@@ -1,0 +1,8 @@
+PATCH http://localhost:3003/api/user/changePwd/3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlck5hbWUiOiJ1c2VyMjIiLCJwaWN0dXJlIjoiLzE1Nzk5NTc4NjM2MjZfU2NyZWVuc2hvdCBmcm9tIDIwMTktMDEtMTEgMDgtMTUtMDMucG5nIiwiaWF0IjoxNTc5OTU5OTYzLCJleHAiOjE1Nzk5NjM1NjN9.PyISQCN9Ew4QKQTtZr9dtgh6-1xE7Iepq04A7wTEveQ
+
+{
+  "pwd": 123,
+  "newPwd":456
+}
