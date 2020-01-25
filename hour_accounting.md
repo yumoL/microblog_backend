@@ -9,7 +9,7 @@
 |       | 1    | test api|
 | 13.1  | 1    | review redux|
 |       | 2  | login and register in frontend|
-|       | 2  | redirect to login page if not log in and to home page if already log in|
+|       | 3  | redirect to login page if not log in and to home page if already log in|
 |       | 2    | test login and register in frontend |
 | 16.1  | 2.5  | learn script, deploy app to heroku with CircleCI| 
 | 23.1  | 2.5  | start to build api to upload file (google and go through koa-bodyParser source code to find out why formidable doesn't work with bodyParser)|
