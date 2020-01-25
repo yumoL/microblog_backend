@@ -78,6 +78,39 @@ describe('Login', () => {
     })
     expect(res.body.errno).not.toBe(0)
   })
+})
 
+describe('Change user info', () => {
+  let id
+  let token
+  beforeEach(async () => {
+    await User.destroy({ where: {} })
+    await register(testUser)
+    const res = await login(testUser)
+    // get user id and token
+    id = res.body.data.id
+    token = res.body.data.token
+  })
+
+  test('Can change basic info', async() => {
+    const res = await server.patch(`/api/user/changeInfo/${id}`)
+      .send({ newUserName: 'newUser', newPicture: '/newPic.png' })
+      .set('Authorization', 'bearer '+token)
+    expect(res.body.errno).toBe(0)
+  })
+
+  test('Can change password', async() => {
+    const res = await server.patch(`/api/user/changePwd/${id}`)
+      .send({ pwd: testUser.password, newPwd:'newPwd' })
+      .set('Authorization', 'bearer '+token)
+    expect(res.body.errno).toBe(0)
+  })
+
+  test('Cannot change password if old password is wrong', async()=>{
+    const res = await server.patch(`/api/user/changePwd/${id}`)
+      .send({ pwd: 'wrongPwd', newPwd:'newPwd' })
+      .set('Authorization', 'bearer '+token)
+    expect(res.body.errno).not.toBe(0)
+  })
 })
 
