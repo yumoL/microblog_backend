@@ -2,14 +2,14 @@
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
-| 12.1  | 2    | learn koa2 |
+| 12.1  | 3    | learn koa2 |
 |       | 1    | config redis and mysql |
-|       | 3    | create basic structure for backend, create register and login api |
+|       | 4    | create basic structure for backend, create register and login api |
 |       | 1    | config circleci |
 |       | 1    | test api|
 | 13.1  | 1    | review redux|
-|       | 1.5  | login and register in frontend|
-|       | 1.5  | redirect to login page if not log in and to home page if already log in|
+|       | 2  | login and register in frontend|
+|       | 2  | redirect to login page if not log in and to home page if already log in|
 |       | 2    | test login and register in frontend |
 | 16.1  | 2.5  | learn script, deploy app to heroku with CircleCI| 
 | 23.1  | 2.5  | start to build api to upload file (google and go through koa-bodyParser source code to find out why formidable doesn't work with bodyParser)|
