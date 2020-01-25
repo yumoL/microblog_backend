@@ -28,8 +28,23 @@ module.exports = {
   },
 
   jsonSchemaFailInfo: {
-    errno: 10009,
+    errno: 10006,
     message: 'Data validation failed'
+  },
+
+  uploadFileSizeFailInfo: {
+    errno: 10007,
+    message: 'The file size is too large'
+  },
+
+  changeInfoFailInfo: {
+    errno: 10008,
+    message: 'Fail to change user info'
+  },
+
+  changePwdFailInfo: {
+    errno: 10009,
+    message: 'Fail to change password'
   }
 
 
