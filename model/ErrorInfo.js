@@ -45,6 +45,11 @@ module.exports = {
   changePwdFailInfo: {
     errno: 10009,
     message: 'Fail to change password'
+  },
+
+  createBlogFail: {
+    errno: 10010,
+    message: 'Fail to create new blog'
   }
 
 
