@@ -19,4 +19,7 @@
 |25.1   | 3  | frontend to change user information (services+reducer+view), find a solution to get the url of uploaded file|
 |       | 1.5 |try different ways to handle jwt-token expiration in frontend|
 |26.1   | 1   | test change user info api|
+|28.1   | 1.5 | create database models (blog and comment), api to create new blogs|
+|       | 2   | try to upload multipule files (hasn't succeded yet)|
+|29.1   | 1.5 | api to upload multiple images|
 
