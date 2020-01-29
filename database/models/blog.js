@@ -8,9 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     content: {
       type: DataTypes.TEXT,
       allowNull: false
-    },
-    image: {
-      type: DataTypes.STRING
     }
   }, {})
   Blog.associate = function(models) {
@@ -19,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     })
     Blog.hasMany(models.Comment, {
       foreignKey: 'blogId'
+    })
+    Blog.hasMany(models.Image, {
+      foreignKey: 'blogId',
+      as: 'images'
     })
   }
   return Blog

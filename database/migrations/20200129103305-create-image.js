@@ -1,26 +1,26 @@
 'use strict'
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Blogs', {
+    return queryInterface.createTable('Images', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
+      url: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      blogId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         onDelete: 'CASCADE',
         references: {
-          model: 'Users',
+          model: 'Blogs',
           key: 'id',
-          as: 'userId'
+          as: 'blogId'
         }
-      },
-      content: {
-        type: Sequelize.TEXT,
-        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -33,6 +33,6 @@ module.exports = {
     })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Blogs')
+    return queryInterface.dropTable('Images')
   }
 }

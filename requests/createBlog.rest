@@ -1,0 +1,11 @@
+POST http://localhost:3003/api/blog/create/1
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlck5hbWUiOiJ1c2VyMTEiLCJwaWN0dXJlIjoiL2RlZmF1bHRlZF9waWN0dXJlLmpwZyIsImlhdCI6MTU4MDI5NTczNywiZXhwIjoxNTgwMjk5MzM3fQ.D92BGhRwIcssmjATRpOUdDLdA8G7In7OpSsvDziF3rU
+
+{
+  "content":"content",
+  "urls": [
+      "/111",
+      "/222"
+  ]
+}

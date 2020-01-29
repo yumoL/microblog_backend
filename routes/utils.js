@@ -4,22 +4,26 @@
 
 const router = require('koa-router')()
 //const koaForm = require('formidable-upload-koa')
-const { saveFile } = require('../controllers/utils')
+const { saveFiles } = require('../controllers/utils')
 const koaForm = require('formidable-upload-koa')
 
 router.prefix('/api/utils')
 
+const options = {
+  multiples: true
+}
+
 //upload a picture
-router.post('/upload', koaForm(), async(ctx,next) => {
-  console.log('hhhhhhhhh',ctx.body.files)
-  const file = ctx.req.files['file']
-  const { size, path, name, type } = file
-  ctx.body = await saveFile(ctx, {
-    name,
-    type,
-    size,
-    filePath: path
-  })
+router.post('/upload', koaForm(options), async(ctx,next) => {
+  const fileData = ctx.req.files
+  let files = []
+  if(!fileData.file.length){
+    files.push(fileData['file'])
+  } else {
+    files=fileData.file
+  }
+  ctx.body = await saveFiles(ctx, files)
+
 })
 
 module.exports = router
