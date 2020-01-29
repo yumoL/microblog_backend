@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'blogId'
     })
     Blog.hasMany(models.Image, {
-      foreignKey: 'blogId'
+      foreignKey: 'blogId',
+      as: 'images'
     })
   }
   return Blog
