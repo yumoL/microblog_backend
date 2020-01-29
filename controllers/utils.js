@@ -15,30 +15,27 @@ fse.pathExists(DIST_FOLDER_PATH).then(exist => {
     fse.ensureDir(DIST_FOLDER_PATH)
   }
 })
-/**
- * save file
- */
-async function saveFile(ctx, { name, type, size, filePath }){
-  // file size is too large
-  if(size>MAX_SIZE){
-    //delete file
-    await fse.remove(filePath)
 
-    ctx.status = 400
-    return new ErrorModel(uploadFileSizeFailInfo)
+async function saveFiles(ctx, files) {
+  let data = []
+  console.log('toSave', files)
+  for(let i=0;i<files.length;i++){
+    console.log(i, files[i])
+    const { name, size, path:filePath } = files[i]
+    if(size>MAX_SIZE){
+      //delete file
+      await fse.remove(filePath)
+      ctx.status = 400
+      return new ErrorModel(uploadFileSizeFailInfo)
+    }
+    const fileName = Date.now() + '_' + name
+    const distFilePath = path.join(DIST_FOLDER_PATH, fileName)
+    await fse.move(filePath, distFilePath)
+    data.push('/' + fileName)
   }
-
-  // move file
-  const fileName = Date.now() + '_' + name
-  const distFilePath = path.join(DIST_FOLDER_PATH, fileName)
-  await fse.move(filePath, distFilePath)
-
-  // return file url
-  return new SuccessModel({
-    url: '/' + fileName
-  })
+  return new SuccessModel(data)
 }
 
 module.exports = {
-  saveFile
+  saveFiles
 }
