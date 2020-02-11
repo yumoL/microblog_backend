@@ -24,4 +24,5 @@
 |29.1   | 1.5 | api to upload multiple images|
 |       | 2   | can create blog with multiple images|
 |11.2   | 0.5 | fix the middleware that handles token expiration to pass tests|
+|       | 0.5 | xss filtering and data validation for new blogs|
 
