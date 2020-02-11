@@ -5,28 +5,7 @@
 
 const server = require('../server')
 const { User } = require('../../database/models')
-
-const userName = `u_${Date.now()}`
-const password = `p_${Date.now()}`
-const testUser = {
-  userName,
-  password
-}
-
-const register = async (user) => {
-  const response = await server
-    .post('/api/user/register')
-    .send(user)
-  return response
-}
-
-const login = async (user) => {
-  const response = await server
-    .post('/api/user/login')
-    .send(user)
-  return response
-}
-
+const { testUser, register, login, registerAndLogin } = require('../testHelper')
 
 describe('Register', () => {
   let res
@@ -45,6 +24,7 @@ describe('Register', () => {
   })
 
   test('Can check if a userName is already existed', async () => {
+    const userName = testUser.userName
     res = await server.post('/api/user/isExist').send({ userName })
     expect(res.body.errno).toBe(0)
   })
@@ -84,12 +64,9 @@ describe('Change user info', () => {
   let id
   let token
   beforeEach(async () => {
-    await User.destroy({ where: {} })
-    await register(testUser)
-    const res = await login(testUser)
-    // get user id and token
-    id = res.body.data.id
-    token = res.body.data.token
+    const loggedInUser = await registerAndLogin()
+    id = loggedInUser.id
+    token = loggedInUser.token
   })
 
   test('Can change basic info', async() => {
@@ -106,11 +83,16 @@ describe('Change user info', () => {
     expect(res.body.errno).toBe(0)
   })
 
-  test('Cannot change password if old password is wrong', async()=>{
+  test('Cannot change password if old password is wrong', async() => {
     const res = await server.patch(`/api/user/changePwd/${id}`)
       .send({ pwd: 'wrongPwd', newPwd:'newPwd' })
       .set('Authorization', 'bearer '+token)
     expect(res.body.errno).not.toBe(0)
   })
 })
+
+module.exports = {
+  register,
+  login
+}
 
