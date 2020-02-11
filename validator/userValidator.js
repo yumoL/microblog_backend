@@ -25,7 +25,7 @@ const SCHEMA = {
 
 /**
  * Validate user data
- * @param {object} data 
+ * @param {object} data
  */
 function userValidate(data = {}) {
   return validate(SCHEMA, data)

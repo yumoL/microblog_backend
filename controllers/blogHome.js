@@ -1,7 +1,7 @@
 /**
  * @description home controller
  */
-
+const xss = require('xss')
 const { createBlog } = require('../services/blog')
 const { SuccessModel, ErrorModel } = require('../model/ResModel')
 const {
@@ -12,7 +12,7 @@ async function create( ctx, { userId, content, urls }){
   try{
     const blog = await createBlog({
       userId,
-      content,
+      content: xss(content), //xss filter
       urls
     })
     return new SuccessModel(blog)

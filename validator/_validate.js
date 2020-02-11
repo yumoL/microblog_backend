@@ -6,9 +6,9 @@ const Ajv = require('ajv')
 const ajv = new Ajv()
 
 /**
- * 
+ *
  * @param {Object} schema validation rules
- * @param {Object} data 
+ * @param {Object} data
  */
 function validate(schema, data = {}) {
   const valid = ajv.validate(schema, data)
