@@ -23,4 +23,5 @@
 |       | 2   | try to upload multipule files (hasn't succeded yet)|
 |29.1   | 1.5 | api to upload multiple images|
 |       | 2   | can create blog with multiple images|
+|11.2   | 0.5 | fix the middleware that handles token expiration to pass tests|
 
