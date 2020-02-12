@@ -34,11 +34,23 @@ jobs:
             echo Failed waiting for MySQL && exit 1
       - run: npm run create_test_db
       - run: npm test
+  migratedb:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache: 
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: ./node_modules/.bin/sequelize db:migrate --env=production
   deploy:
     executor: heroku/default
     steps:
       - checkout
-      - run: ./node_modules/.bin/sequelize db:migrate --env=production
       - heroku/install
       - heroku/deploy-via-git:
           only-branch: master
@@ -47,6 +59,9 @@ workflows:
   test-build-deploy:
     jobs:
       - test_backend
+      - migratedb:
+          requires:
+            - test_backend
       - deploy:
           requires: 
-            - test_backend
+            - migratedb
