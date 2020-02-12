@@ -38,7 +38,7 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
-      - run: npm run migrate
+      - run: ./node_modules/.bin/sequelize db:migrate --env=production
       - heroku/install
       - heroku/deploy-via-git:
           only-branch: master
