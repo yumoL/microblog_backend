@@ -26,5 +26,5 @@
 |11.2   | 0.5 | fix the middleware that handles token expiration to pass tests|
 |       | 0.5 | xss filtering and data validation for new blogs|
 |       | 0.5 | test api that create new blogs|
-|12.2   | 1   | migrate new schame before deploy in CI|
+|12.2   | 0.5   | migrate new schame before deploy in CI|
 
