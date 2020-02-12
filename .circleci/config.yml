@@ -38,6 +38,7 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
+      - run: npm run migrate
       - heroku/install
       - heroku/deploy-via-git:
           only-branch: master
