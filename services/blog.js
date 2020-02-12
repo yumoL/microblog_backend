@@ -2,7 +2,8 @@
  * @description blog service
  */
 
-const { Blog, Image } = require('../database/models')
+const { Blog, Image, User } = require('../database/models')
+const { formatUser } = require('./_format')
 
 async function createBlog({ userId, content, urls }){
   const blogResult = await Blog.create({
@@ -28,6 +29,49 @@ async function createBlog({ userId, content, urls }){
   return blog.dataValues
 }
 
+/**
+ * Get bloglist by username
+ */
+async function getBlogListByUser({ userName: userId, pageIndex=0, pageSize=5 }){
+  const userWhereOpts = {}
+  if(userId){
+    userWhereOpts.id = userId
+  }
+  const res = await Blog.findAndCountAll({
+    limit: 5, //how many blogs in page
+    offset: pageSize * pageIndex, //how many blogs should be jumped
+    order: [
+      ['id', 'desc']
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['userName','picture'],
+        where: userWhereOpts,
+        as: 'user'
+      },
+      {
+        model: Image,
+        attributes: ['url'],
+        as: 'images'
+      }
+    ]
+  })
+  let blogList = res.rows.map(row => row.dataValues)
+  blogList = blogList.map(blogItem => {
+    const user = blogItem.user.dataValues
+    blogItem.user = formatUser(user)
+    return blogItem
+  })
+  return {
+    //res.count is the total number of all blogs, it has nothing to do with the limit.
+    //res.rows is the query result considering the limit
+    count: res.count,
+    blogList
+  }
+}
+
 module.exports = {
-  createBlog
+  createBlog,
+  getBlogListByUser
 }

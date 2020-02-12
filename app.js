@@ -17,6 +17,7 @@ const userApiRouter = require('./routes/user')
 const otherRouter = require('./routes/other')
 const utilsApiRouter = require('./routes/utils')
 const homeApiRouter = require('./routes/blogHome')
+const profileApiRouter = require('./routes/blogProfile')
 
 const { JWT_SECRET_KEY }=require('./constants')
 
@@ -60,6 +61,7 @@ app.use(index.routes(), index.allowedMethods())
 app.use(userApiRouter.routes(), userApiRouter.allowedMethods())
 app.use(utilsApiRouter.routes(), utilsApiRouter.allowedMethods())
 app.use(homeApiRouter.routes(), homeApiRouter.allowedMethods())
+app.use(profileApiRouter.routes(), profileApiRouter.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {

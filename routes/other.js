@@ -4,7 +4,7 @@
 const router = require('koa-router')()
 const fs = require('fs')
 
-router.get('/*',(ctx,next) => {
+router.get('/ui',(ctx,next) => {
   ctx.type='html'
   ctx.body=fs.createReadStream('./build/index.html')
 })
