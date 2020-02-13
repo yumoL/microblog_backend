@@ -28,4 +28,7 @@
 |       | 0.5 | test api that create new blogs|
 |12.2   | 0.5 | migrate new schame before deploy in CI|
 |       | 1.5 | api to get blogs by user id|
+|13.2   | 2   | fix bugs of api that get blogs by user id|
+|       | 3   | list blogs by user in frontend (display images in a reasonable way + zoom out an image on click|
+|       | 2   | images can be removed before upload|
 
