@@ -32,14 +32,15 @@ async function createBlog({ userId, content, urls }){
 /**
  * Get bloglist by username
  */
-async function getBlogListByUser({ userName: userId, pageIndex=0, pageSize=5 }){
+async function getBlogListByUser({ userId, pageIndex=0, pageSize=5 }){
   const userWhereOpts = {}
   if(userId){
+    console.log('userIIIIId',userId)
     userWhereOpts.id = userId
   }
   const res = await Blog.findAndCountAll({
-    limit: 5, //how many blogs in page
-    offset: pageSize * pageIndex, //how many blogs should be jumped
+    limit: Number(pageSize), //how many blogs in page
+    offset: Number(pageSize * pageIndex), //how many blogs should be jumped
     order: [
       ['id', 'desc']
     ],
@@ -66,7 +67,6 @@ async function getBlogListByUser({ userName: userId, pageIndex=0, pageSize=5 }){
   return {
     //res.count is the total number of all blogs, it has nothing to do with the limit.
     //res.rows is the query result considering the limit
-    count: res.count,
     blogList
   }
 }
