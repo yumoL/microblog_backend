@@ -1,4 +1,5 @@
 # Hour Accounting
+total 53
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
