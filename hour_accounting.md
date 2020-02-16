@@ -1,5 +1,5 @@
 # Hour Accounting
-total 58.5
+total 59
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
@@ -33,4 +33,4 @@ total 58.5
 |       | 3   | list blogs by user in frontend (display images in a reasonable way + zoom out an image on click|
 |       | 2   | images can be removed before upload|
 | 14.2  | 0.5 | install and learn to use Postman|
-| 16.2  | 5   | learn robot framework and apply end-to-end testing for register|
+| 16.2  | 5.5   | learn robot framework and apply end-to-end testing for register and login|
