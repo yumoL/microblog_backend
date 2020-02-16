@@ -7,6 +7,7 @@
     "prd": "NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon --inspect=9229 index.js",
     "test": "NODE_ENV=test jest --runInBand --forceExit --colors",
+    "eeTest": " ./node_modules/.bin/sequelize db:drop --env test; ./node_modules/.bin/sequelize db:create --env test; ./node_modules/.bin/sequelize db:migrate --env test; NODE_ENV=test nodemon index.js",
     "lint": "eslint --ext .js .",
     "build:ui": "rm -rf build && cd ../microblog_client && npm run build && cp -r build ../microblog_backend",
     "createdb": "./node_modules/.bin/sequelize db:create",
