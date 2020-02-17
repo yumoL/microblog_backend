@@ -33,4 +33,4 @@ total 59
 |       | 3   | list blogs by user in frontend (display images in a reasonable way + zoom out an image on click|
 |       | 2   | images can be removed before upload|
 | 14.2  | 0.5 | install and learn to use Postman|
-| 15.2,16.2  | 5.5   | learn robot framework and apply end-to-end testing for register and login|
+| 15.2, 16.2  | 5.5   | learn robot framework and apply end-to-end testing for register and login|
