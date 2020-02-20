@@ -1,5 +1,5 @@
 # Hour Accounting
-total 59
+total 61.5
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
@@ -34,3 +34,4 @@ total 59
 |       | 2   | images can be removed before upload|
 | 14.2  | 0.5 | install and learn to use Postman|
 | 15.2, 16.2  | 5.5   | learn robot framework and apply end-to-end testing for register and login|
+| 19.2, 20.2  | 2.5   | end-to-end testing for account setting|
