@@ -8,7 +8,6 @@ async function getProfileBlogList({ userId, pageIndex = 0 }){
     pageIndex,
     pageSize: process.env.PAGE_SIZE || PAGE_SIZE
   })
-  console.log('blogList', res.blogList)
   return new SuccessModel({
     blogList: res.blogList,
   })

@@ -35,7 +35,6 @@ async function createBlog({ userId, content, urls }){
 async function getBlogListByUser({ userId, pageIndex=0, pageSize=5 }){
   const userWhereOpts = {}
   if(userId){
-    console.log('userIIIIId',userId)
     userWhereOpts.id = userId
   }
   const res = await Blog.findAndCountAll({

@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.1 on linux)" generated="20200222 11:39:21.845" rpa="false">
+<suite id="s1" name="Tests" source="/home/local/luoyumo/Desktop/microblog_backend/tests/robot_tests/Tests">
+<suite id="s1-s1" name="01 Register" source="/home/local/luoyumo/Desktop/microblog_backend/tests/robot_tests/Tests/01_Register.robot">
+<test id="s1-s1-t1" name="New user should be able to register with valid data">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:21.954" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:21.954" endtime="20200222 11:39:22.418"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:21.954" endtime="20200222 11:39:22.418"></status>
+</kw>
+<kw name="Register new user successfully" library="RegisterPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to register page" library="RegisterPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:22.421" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:22.420" endtime="20200222 11:39:22.705"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:22.420" endtime="20200222 11:39:22.705"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:22.706" endtime="20200222 11:39:22.722"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:22.705" endtime="20200222 11:39:22.722"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_MENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:22.723" level="INFO">Clicking element 'id=registerMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:22.722" endtime="20200222 11:39:22.867"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SIGN_UP_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:22.867" endtime="20200222 11:39:22.893"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:22.419" endtime="20200222 11:39:22.893"></status>
+</kw>
+<kw name="Start register" library="RegisterPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:22.894" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:22.894" endtime="20200222 11:39:23.058"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:23.058" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:23.058" endtime="20200222 11:39:23.225"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:23.226" level="INFO">Typing text 'testPwd' into text field 'id=pwdConfirm'.</msg>
+<status status="PASS" starttime="20200222 11:39:23.226" endtime="20200222 11:39:23.387"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:22.894" endtime="20200222 11:39:23.387"></status>
+</kw>
+<kw name="Register succeeded" library="RegisterPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_UP_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:23.388" level="INFO">Clicking button 'id=register'.</msg>
+<status status="PASS" starttime="20200222 11:39:23.388" endtime="20200222 11:39:23.493"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Register succeeded</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:23.493" endtime="20200222 11:39:23.723"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Log in to your account</arg>
+</arguments>
+<msg timestamp="20200222 11:39:23.743" level="INFO">Current page contains text 'Log in to your account'.</msg>
+<status status="PASS" starttime="20200222 11:39:23.723" endtime="20200222 11:39:23.743"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:23.387" endtime="20200222 11:39:23.743"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:22.418" endtime="20200222 11:39:23.743"></status>
+</kw>
+<kw name="Register new user successfully" library="RegisterPage">
+<arguments>
+<arg>${USERNAME_2}</arg>
+<arg>${PWD_2}</arg>
+</arguments>
+<kw name="Go to register page" library="RegisterPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:23.747" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:23.746" endtime="20200222 11:39:23.859"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:23.746" endtime="20200222 11:39:23.860"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:23.862" endtime="20200222 11:39:23.881"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:23.860" endtime="20200222 11:39:23.881"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_MENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:23.883" level="INFO">Clicking element 'id=registerMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:23.882" endtime="20200222 11:39:23.946"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SIGN_UP_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:23.947" endtime="20200222 11:39:23.959"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:23.745" endtime="20200222 11:39:23.959"></status>
+</kw>
+<kw name="Start register" library="RegisterPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:23.960" level="INFO">Typing text 'testUser2' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:23.959" endtime="20200222 11:39:24.124"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:24.125" level="INFO">Typing text 'testPwd2' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:24.125" endtime="20200222 11:39:24.285"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:24.286" level="INFO">Typing text 'testPwd2' into text field 'id=pwdConfirm'.</msg>
+<status status="PASS" starttime="20200222 11:39:24.285" endtime="20200222 11:39:24.441"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:23.959" endtime="20200222 11:39:24.441"></status>
+</kw>
+<kw name="Register succeeded" library="RegisterPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_UP_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:24.442" level="INFO">Clicking button 'id=register'.</msg>
+<status status="PASS" starttime="20200222 11:39:24.442" endtime="20200222 11:39:24.541"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Register succeeded</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:24.541" endtime="20200222 11:39:24.782"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Log in to your account</arg>
+</arguments>
+<msg timestamp="20200222 11:39:24.818" level="INFO">Current page contains text 'Log in to your account'.</msg>
+<status status="PASS" starttime="20200222 11:39:24.783" endtime="20200222 11:39:24.819"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:24.441" endtime="20200222 11:39:24.819"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:23.745" endtime="20200222 11:39:24.819"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:24.821" endtime="20200222 11:39:24.891"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:24.820" endtime="20200222 11:39:24.892"></status>
+</kw>
+<tags>
+<tag>Register</tag>
+</tags>
+<status status="PASS" starttime="20200222 11:39:21.953" endtime="20200222 11:39:24.892" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Error should exist when register with existing username">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:24.897" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:24.897" endtime="20200222 11:39:26.399"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:24.896" endtime="20200222 11:39:26.400"></status>
+</kw>
+<kw name="Go to register page" library="RegisterPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:26.401" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:26.401" endtime="20200222 11:39:26.697"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:26.401" endtime="20200222 11:39:26.697"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:26.703" endtime="20200222 11:39:26.722"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:26.698" endtime="20200222 11:39:26.722"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_MENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:26.724" level="INFO">Clicking element 'id=registerMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:26.723" endtime="20200222 11:39:26.861"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SIGN_UP_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:26.862" endtime="20200222 11:39:26.887"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:26.400" endtime="20200222 11:39:26.887"></status>
+</kw>
+<kw name="Start register" library="RegisterPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>pwd</arg>
+<arg>pwd</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:26.889" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:26.889" endtime="20200222 11:39:27.050"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:27.051" level="INFO">Typing text 'pwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:27.050" endtime="20200222 11:39:27.166"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:27.167" level="INFO">Typing text 'pwd' into text field 'id=pwdConfirm'.</msg>
+<status status="PASS" starttime="20200222 11:39:27.166" endtime="20200222 11:39:27.295"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:26.888" endtime="20200222 11:39:27.295"></status>
+</kw>
+<kw name="Display errors" library="RegisterPage">
+<arguments>
+<arg>User name is already existed</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${ERROR}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:27.296" endtime="20200222 11:39:27.758"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:27.296" endtime="20200222 11:39:27.758"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:27.760" endtime="20200222 11:39:27.830"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:27.759" endtime="20200222 11:39:27.830"></status>
+</kw>
+<tags>
+<tag>Register</tag>
+</tags>
+<status status="PASS" starttime="20200222 11:39:24.895" endtime="20200222 11:39:27.831" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="Error should exist when register with invalid username">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:27.835" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:27.834" endtime="20200222 11:39:29.307"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:27.833" endtime="20200222 11:39:29.308"></status>
+</kw>
+<kw name="Go to register page" library="RegisterPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:29.311" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:29.310" endtime="20200222 11:39:29.584"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:29.310" endtime="20200222 11:39:29.584"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:29.585" endtime="20200222 11:39:29.606"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:29.584" endtime="20200222 11:39:29.606"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_MENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:29.606" level="INFO">Clicking element 'id=registerMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:29.606" endtime="20200222 11:39:29.742"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SIGN_UP_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:29.742" endtime="20200222 11:39:29.770"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:29.309" endtime="20200222 11:39:29.770"></status>
+</kw>
+<kw name="Start register" library="RegisterPage">
+<arguments>
+<arg>a</arg>
+<arg>pwd</arg>
+<arg>pwd</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:29.771" level="INFO">Typing text 'a' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:29.770" endtime="20200222 11:39:29.883"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:29.883" level="INFO">Typing text 'pwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:29.883" endtime="20200222 11:39:30.001"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:30.001" level="INFO">Typing text 'pwd' into text field 'id=pwdConfirm'.</msg>
+<status status="PASS" starttime="20200222 11:39:30.001" endtime="20200222 11:39:30.113"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:29.770" endtime="20200222 11:39:30.113"></status>
+</kw>
+<kw name="Display errors" library="RegisterPage">
+<arguments>
+<arg>Username should be between 3 and 255 characters</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${ERROR}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:30.114" endtime="20200222 11:39:30.131"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:30.113" endtime="20200222 11:39:30.131"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:30.132" endtime="20200222 11:39:30.189"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:30.132" endtime="20200222 11:39:30.189"></status>
+</kw>
+<tags>
+<tag>Register</tag>
+</tags>
+<status status="PASS" starttime="20200222 11:39:27.832" endtime="20200222 11:39:30.189" critical="yes"></status>
+</test>
+<test id="s1-s1-t4" name="Error should exist when register with invalid password">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:30.190" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:30.190" endtime="20200222 11:39:31.679"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:30.190" endtime="20200222 11:39:31.679"></status>
+</kw>
+<kw name="Go to register page" library="RegisterPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:31.681" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:31.681" endtime="20200222 11:39:31.991"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:31.680" endtime="20200222 11:39:31.991"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:31.992" endtime="20200222 11:39:32.017"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:31.991" endtime="20200222 11:39:32.017"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_MENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:32.018" level="INFO">Clicking element 'id=registerMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:32.017" endtime="20200222 11:39:32.149"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SIGN_UP_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:32.149" endtime="20200222 11:39:32.170"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:31.680" endtime="20200222 11:39:32.170"></status>
+</kw>
+<kw name="Start register" library="RegisterPage">
+<arguments>
+<arg>newUser</arg>
+<arg>p</arg>
+<arg>p</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:32.171" level="INFO">Typing text 'newUser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:32.171" endtime="20200222 11:39:32.325"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:32.326" level="INFO">Typing text 'p' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:32.325" endtime="20200222 11:39:32.421"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:32.422" level="INFO">Typing text 'p' into text field 'id=pwdConfirm'.</msg>
+<status status="PASS" starttime="20200222 11:39:32.421" endtime="20200222 11:39:32.530"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:32.170" endtime="20200222 11:39:32.530"></status>
+</kw>
+<kw name="Display errors" library="RegisterPage">
+<arguments>
+<arg>Password should be between 3 and 255 characters</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${ERROR}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:32.531" endtime="20200222 11:39:32.550"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:32.530" endtime="20200222 11:39:32.551"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:32.551" endtime="20200222 11:39:32.632"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:32.551" endtime="20200222 11:39:32.633"></status>
+</kw>
+<tags>
+<tag>Register</tag>
+</tags>
+<status status="PASS" starttime="20200222 11:39:30.189" endtime="20200222 11:39:32.633" critical="yes"></status>
+</test>
+<test id="s1-s1-t5" name="Error should exist when password and its confirmation are different">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:32.639" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:32.638" endtime="20200222 11:39:34.161"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:32.637" endtime="20200222 11:39:34.161"></status>
+</kw>
+<kw name="Go to register page" library="RegisterPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:34.165" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:34.165" endtime="20200222 11:39:34.466"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:34.164" endtime="20200222 11:39:34.467"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:34.467" endtime="20200222 11:39:34.490"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:34.467" endtime="20200222 11:39:34.490"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_MENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:34.491" level="INFO">Clicking element 'id=registerMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:34.491" endtime="20200222 11:39:34.628"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SIGN_UP_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:34.628" endtime="20200222 11:39:34.652"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:34.163" endtime="20200222 11:39:34.652"></status>
+</kw>
+<kw name="Start register" library="RegisterPage">
+<arguments>
+<arg>newUser</arg>
+<arg>pwd</arg>
+<arg>diffPwd</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:34.654" level="INFO">Typing text 'newUser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:34.653" endtime="20200222 11:39:34.825"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:34.826" level="INFO">Typing text 'pwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:34.825" endtime="20200222 11:39:34.941"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:34.944" level="INFO">Typing text 'diffPwd' into text field 'id=pwdConfirm'.</msg>
+<status status="PASS" starttime="20200222 11:39:34.942" endtime="20200222 11:39:35.089"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:34.653" endtime="20200222 11:39:35.089"></status>
+</kw>
+<kw name="Display errors" library="RegisterPage">
+<arguments>
+<arg>Confirmation does not match the password</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${ERROR}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:35.090" endtime="20200222 11:39:35.111"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:35.089" endtime="20200222 11:39:35.111"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:35.112" endtime="20200222 11:39:35.178"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:35.112" endtime="20200222 11:39:35.179"></status>
+</kw>
+<tags>
+<tag>Register</tag>
+</tags>
+<status status="PASS" starttime="20200222 11:39:32.635" endtime="20200222 11:39:35.179" critical="yes"></status>
+</test>
+<doc>Test register</doc>
+<status status="PASS" starttime="20200222 11:39:21.864" endtime="20200222 11:39:35.185"></status>
+</suite>
+<suite id="s1-s2" name="02 Login" source="/home/local/luoyumo/Desktop/microblog_backend/tests/robot_tests/Tests/02_Login.robot">
+<test id="s1-s2-t1" name="User should be able to login with correct credentials">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:35.200" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:35.200" endtime="20200222 11:39:36.658"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:35.200" endtime="20200222 11:39:36.658"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:36.663" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:36.661" endtime="20200222 11:39:36.934"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:36.661" endtime="20200222 11:39:36.934"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:36.935" endtime="20200222 11:39:36.955"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:36.935" endtime="20200222 11:39:36.956"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:36.956" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:36.956" endtime="20200222 11:39:37.091"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:37.091" endtime="20200222 11:39:37.114"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:36.660" endtime="20200222 11:39:37.115"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:37.115" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:37.115" endtime="20200222 11:39:37.266"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:37.266" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:37.266" endtime="20200222 11:39:37.416"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:37.417" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:37.416" endtime="20200222 11:39:37.517"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:37.115" endtime="20200222 11:39:37.517"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:37.518" endtime="20200222 11:39:37.821"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:37.886" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:37.822" endtime="20200222 11:39:37.886"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:37.517" endtime="20200222 11:39:37.886"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:36.659" endtime="20200222 11:39:37.887"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:37.888" endtime="20200222 11:39:37.949"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:37.887" endtime="20200222 11:39:37.950"></status>
+</kw>
+<tags>
+<tag>Login</tag>
+</tags>
+<status status="PASS" starttime="20200222 11:39:35.199" endtime="20200222 11:39:37.950" critical="yes"></status>
+</test>
+<test id="s1-s2-t2" name="User should not be able to login with wrong credentials">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:37.953" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:37.952" endtime="20200222 11:39:39.481"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:37.952" endtime="20200222 11:39:39.482"></status>
+</kw>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:39.486" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:39.484" endtime="20200222 11:39:39.766"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:39.483" endtime="20200222 11:39:39.767"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:39.767" endtime="20200222 11:39:39.796"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:39.767" endtime="20200222 11:39:39.796"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:39.796" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:39.796" endtime="20200222 11:39:39.927"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:39.927" endtime="20200222 11:39:39.949"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:39.482" endtime="20200222 11:39:39.949"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>wrongPwd</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:39.950" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:39.950" endtime="20200222 11:39:40.102"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:40.102" level="INFO">Typing text 'wrongPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:40.102" endtime="20200222 11:39:40.278"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:40.278" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:40.278" endtime="20200222 11:39:40.381"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:39.949" endtime="20200222 11:39:40.381"></status>
+</kw>
+<kw name="Display errors" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Login failed, wrong username or password</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:40.382" endtime="20200222 11:39:40.412"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:40.381" endtime="20200222 11:39:40.412"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:40.414" endtime="20200222 11:39:40.474"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:40.413" endtime="20200222 11:39:40.475"></status>
+</kw>
+<tags>
+<tag>Login</tag>
+</tags>
+<status status="PASS" starttime="20200222 11:39:37.951" endtime="20200222 11:39:40.476" critical="yes"></status>
+</test>
+<doc>Test register</doc>
+<status status="PASS" starttime="20200222 11:39:35.190" endtime="20200222 11:39:40.480"></status>
+</suite>
+<suite id="s1-s3" name="03 Setting" source="/home/local/luoyumo/Desktop/microblog_backend/tests/robot_tests/Tests/03_Setting.robot">
+<test id="s1-s3-t1" name="Can logout">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:40.502" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:40.501" endtime="20200222 11:39:41.985"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:40.501" endtime="20200222 11:39:41.985"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:41.987" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:41.987" endtime="20200222 11:39:42.258"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:41.987" endtime="20200222 11:39:42.258"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:42.261" endtime="20200222 11:39:42.287"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:42.259" endtime="20200222 11:39:42.287"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:42.288" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:42.288" endtime="20200222 11:39:42.423"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:42.423" endtime="20200222 11:39:42.450"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:41.986" endtime="20200222 11:39:42.451"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:42.452" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:42.451" endtime="20200222 11:39:42.599"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:42.600" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:42.599" endtime="20200222 11:39:42.752"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:42.752" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:42.752" endtime="20200222 11:39:42.850"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:42.451" endtime="20200222 11:39:42.850"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:42.851" endtime="20200222 11:39:42.932"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:42.947" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:42.933" endtime="20200222 11:39:42.947"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:42.851" endtime="20200222 11:39:42.947"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:41.986" endtime="20200222 11:39:42.947"></status>
+</kw>
+<kw name="Logout" library="SettingPage">
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:42.948" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:42.948" endtime="20200222 11:39:43.004"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:42.948" endtime="20200222 11:39:43.004"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGOUT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:43.004" level="INFO">Clicking button 'id=logoutButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:43.004" endtime="20200222 11:39:43.112"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Log in to your account</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:43.113" endtime="20200222 11:39:43.131"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:42.948" endtime="20200222 11:39:43.132"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:43.132" endtime="20200222 11:39:43.188"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:43.132" endtime="20200222 11:39:43.188"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:40.500" endtime="20200222 11:39:43.188" critical="yes"></status>
+</test>
+<test id="s1-s3-t2" name="Can change username">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:43.190" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:43.190" endtime="20200222 11:39:44.710"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:43.189" endtime="20200222 11:39:44.711"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:44.714" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:44.714" endtime="20200222 11:39:44.969"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:44.713" endtime="20200222 11:39:44.970"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:44.979" endtime="20200222 11:39:45.002"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:44.973" endtime="20200222 11:39:45.002"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.003" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.003" endtime="20200222 11:39:45.135"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:45.135" endtime="20200222 11:39:45.159"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:44.712" endtime="20200222 11:39:45.159"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.160" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.159" endtime="20200222 11:39:45.308"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.308" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.308" endtime="20200222 11:39:45.457"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.458" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.457" endtime="20200222 11:39:45.582"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:45.159" endtime="20200222 11:39:45.583"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:45.586" endtime="20200222 11:39:45.673"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.688" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.673" endtime="20200222 11:39:45.688"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:45.583" endtime="20200222 11:39:45.689"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:44.711" endtime="20200222 11:39:45.689"></status>
+</kw>
+<kw name="Change username" library="SettingPage">
+<arguments>
+<arg>newUsername</arg>
+</arguments>
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.689" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.689" endtime="20200222 11:39:45.745"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:45.689" endtime="20200222 11:39:45.745"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT_SETTING_ITEM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.745" level="INFO">Clicking element 'id=accountSettingItem'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.745" endtime="20200222 11:39:45.846"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NEW_USERNAME_FIELD}</arg>
+<arg>${NEW_USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:45.846" level="INFO">Typing text 'newUsername' into text field 'id=newUserNameField'.</msg>
+<status status="PASS" starttime="20200222 11:39:45.846" endtime="20200222 11:39:46.052"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:45.689" endtime="20200222 11:39:46.053"></status>
+</kw>
+<kw name="Username change succeeded" library="SettingPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${SAVE_BI_CHANGE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:46.054" level="INFO">Clicking button 'id=saveBIChangeButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:46.054" endtime="20200222 11:39:46.623"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have changed your basic information</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:46.623" endtime="20200222 11:39:46.873"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:46.053" endtime="20200222 11:39:46.874"></status>
+</kw>
+<kw name="Logout" library="SettingPage">
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:46.877" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:46.877" endtime="20200222 11:39:46.951"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:46.875" endtime="20200222 11:39:46.951"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGOUT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:46.952" level="INFO">Clicking button 'id=logoutButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:46.951" endtime="20200222 11:39:47.062"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Log in to your account</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:47.063" endtime="20200222 11:39:47.079"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:46.874" endtime="20200222 11:39:47.079"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>newUsername</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.080" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:47.080" endtime="20200222 11:39:47.191"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.080" endtime="20200222 11:39:47.191"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:47.192" endtime="20200222 11:39:47.212"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.192" endtime="20200222 11:39:47.212"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.213" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:47.212" endtime="20200222 11:39:47.264"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:47.264" endtime="20200222 11:39:47.294"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.080" endtime="20200222 11:39:47.294"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.295" level="INFO">Typing text 'newUsername' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:47.295" endtime="20200222 11:39:47.474"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.475" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:47.475" endtime="20200222 11:39:47.621"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.622" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:47.621" endtime="20200222 11:39:47.783"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.295" endtime="20200222 11:39:47.783"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:47.786" endtime="20200222 11:39:47.849"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.864" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:47.850" endtime="20200222 11:39:47.864"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.784" endtime="20200222 11:39:47.864"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.079" endtime="20200222 11:39:47.864"></status>
+</kw>
+<kw name="Change username" library="SettingPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+</arguments>
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.867" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:47.866" endtime="20200222 11:39:47.923"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.865" endtime="20200222 11:39:47.923"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT_SETTING_ITEM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:47.923" level="INFO">Clicking element 'id=accountSettingItem'.</msg>
+<status status="PASS" starttime="20200222 11:39:47.923" endtime="20200222 11:39:48.006"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NEW_USERNAME_FIELD}</arg>
+<arg>${NEW_USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:48.007" level="INFO">Typing text 'testuser' into text field 'id=newUserNameField'.</msg>
+<status status="PASS" starttime="20200222 11:39:48.006" endtime="20200222 11:39:48.169"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:47.864" endtime="20200222 11:39:48.169"></status>
+</kw>
+<kw name="Username change succeeded" library="SettingPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${SAVE_BI_CHANGE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:48.172" level="INFO">Clicking button 'id=saveBIChangeButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:48.171" endtime="20200222 11:39:48.804"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have changed your basic information</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:48.804" endtime="20200222 11:39:49.053"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:48.170" endtime="20200222 11:39:49.054"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:49.056" endtime="20200222 11:39:49.132"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:49.055" endtime="20200222 11:39:49.132"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:43.188" endtime="20200222 11:39:49.133" critical="yes"></status>
+</test>
+<test id="s1-s3-t3" name="Show error message if new username is already used by another user">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:49.138" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:49.137" endtime="20200222 11:39:50.609"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:49.136" endtime="20200222 11:39:50.610"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:50.612" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:50.612" endtime="20200222 11:39:50.971"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:50.611" endtime="20200222 11:39:50.971"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:50.972" endtime="20200222 11:39:50.993"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:50.972" endtime="20200222 11:39:50.993"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:50.994" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:50.994" endtime="20200222 11:39:51.117"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:51.117" endtime="20200222 11:39:51.140"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:50.611" endtime="20200222 11:39:51.141"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:51.141" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:51.141" endtime="20200222 11:39:51.274"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:51.274" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:51.274" endtime="20200222 11:39:51.412"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:51.413" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:51.412" endtime="20200222 11:39:51.525"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:51.141" endtime="20200222 11:39:51.526"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:51.526" endtime="20200222 11:39:51.604"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:51.620" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:51.604" endtime="20200222 11:39:51.620"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:51.526" endtime="20200222 11:39:51.621"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:50.610" endtime="20200222 11:39:51.621"></status>
+</kw>
+<kw name="Change username" library="SettingPage">
+<arguments>
+<arg>${USERNAME_2}</arg>
+</arguments>
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:51.622" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:51.621" endtime="20200222 11:39:51.677"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:51.621" endtime="20200222 11:39:51.677"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT_SETTING_ITEM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:51.678" level="INFO">Clicking element 'id=accountSettingItem'.</msg>
+<status status="PASS" starttime="20200222 11:39:51.677" endtime="20200222 11:39:51.792"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NEW_USERNAME_FIELD}</arg>
+<arg>${NEW_USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:51.792" level="INFO">Typing text 'testUser2' into text field 'id=newUserNameField'.</msg>
+<status status="PASS" starttime="20200222 11:39:51.792" endtime="20200222 11:39:51.964"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:51.621" endtime="20200222 11:39:51.965"></status>
+</kw>
+<kw name="Display error" library="SettingPage">
+<arguments>
+<arg>User name is already existed</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${error}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:51.966" endtime="20200222 11:39:51.986"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:51.965" endtime="20200222 11:39:51.986"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:51.987" endtime="20200222 11:39:52.041"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:51.986" endtime="20200222 11:39:52.042"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:49.134" endtime="20200222 11:39:52.042" critical="yes"></status>
+</test>
+<test id="s1-s3-t4" name="Can change password">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:52.043" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:52.043" endtime="20200222 11:39:53.532"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:52.043" endtime="20200222 11:39:53.532"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:53.535" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:53.535" endtime="20200222 11:39:53.804"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:53.534" endtime="20200222 11:39:53.805"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:53.805" endtime="20200222 11:39:53.828"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:53.805" endtime="20200222 11:39:53.828"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:53.829" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:53.829" endtime="20200222 11:39:53.961"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:53.961" endtime="20200222 11:39:53.984"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:53.534" endtime="20200222 11:39:53.984"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:53.985" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:53.984" endtime="20200222 11:39:54.128"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.129" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.129" endtime="20200222 11:39:54.268"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.268" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.268" endtime="20200222 11:39:54.384"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:53.984" endtime="20200222 11:39:54.384"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:54.385" endtime="20200222 11:39:54.461"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.480" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.461" endtime="20200222 11:39:54.480"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:54.385" endtime="20200222 11:39:54.480"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:53.533" endtime="20200222 11:39:54.480"></status>
+</kw>
+<kw name="Change password" library="SettingPage">
+<arguments>
+<arg>${PWD_1}</arg>
+<arg>newPwd</arg>
+<arg>newPwd</arg>
+</arguments>
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.481" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.481" endtime="20200222 11:39:54.533"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:54.481" endtime="20200222 11:39:54.533"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT_SETTING_ITEM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.533" level="INFO">Clicking element 'id=accountSettingItem'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.533" endtime="20200222 11:39:54.644"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${OLD_PWD_FIELD}</arg>
+<arg>${OLD_PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.645" level="INFO">Typing text 'testPwd' into text field 'id=oldPwdField'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.645" endtime="20200222 11:39:54.806"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NEW_PWD_FIELD}</arg>
+<arg>${NEW_PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.808" level="INFO">Typing text 'newPwd' into text field 'id=newPwdField'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.807" endtime="20200222 11:39:54.959"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:54.960" level="INFO">Typing text 'newPwd' into text field 'id=pwdConfirmField'.</msg>
+<status status="PASS" starttime="20200222 11:39:54.959" endtime="20200222 11:39:55.091"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_SAVE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:55.092" level="INFO">Clicking button 'id=pwdSaveButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:55.091" endtime="20200222 11:39:55.181"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:54.480" endtime="20200222 11:39:55.181"></status>
+</kw>
+<kw name="Password change succeeded" library="SettingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have changed your password</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:55.181" endtime="20200222 11:39:55.467"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.181" endtime="20200222 11:39:55.467"></status>
+</kw>
+<kw name="Logout" library="SettingPage">
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:55.471" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:55.470" endtime="20200222 11:39:55.571"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.469" endtime="20200222 11:39:55.572"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGOUT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:55.572" level="INFO">Clicking button 'id=logoutButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:55.572" endtime="20200222 11:39:55.674"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Log in to your account</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:55.675" endtime="20200222 11:39:55.692"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.468" endtime="20200222 11:39:55.693"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>newPwd</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:55.694" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:55.694" endtime="20200222 11:39:55.797"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.693" endtime="20200222 11:39:55.797"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:55.798" endtime="20200222 11:39:55.821"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.797" endtime="20200222 11:39:55.822"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:55.823" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:55.822" endtime="20200222 11:39:55.896"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:55.897" endtime="20200222 11:39:55.911"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.693" endtime="20200222 11:39:55.911"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:55.912" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:55.912" endtime="20200222 11:39:56.072"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.073" level="INFO">Typing text 'newPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.073" endtime="20200222 11:39:56.210"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.211" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.210" endtime="20200222 11:39:56.294"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.912" endtime="20200222 11:39:56.294"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:56.295" endtime="20200222 11:39:56.328"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.343" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.329" endtime="20200222 11:39:56.343"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:56.294" endtime="20200222 11:39:56.343"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:55.693" endtime="20200222 11:39:56.343"></status>
+</kw>
+<kw name="Change password" library="SettingPage">
+<arguments>
+<arg>newPwd</arg>
+<arg>${PWD_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.344" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.344" endtime="20200222 11:39:56.389"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:56.343" endtime="20200222 11:39:56.389"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT_SETTING_ITEM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.390" level="INFO">Clicking element 'id=accountSettingItem'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.389" endtime="20200222 11:39:56.478"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${OLD_PWD_FIELD}</arg>
+<arg>${OLD_PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.479" level="INFO">Typing text 'newPwd' into text field 'id=oldPwdField'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.478" endtime="20200222 11:39:56.627"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NEW_PWD_FIELD}</arg>
+<arg>${NEW_PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.627" level="INFO">Typing text 'testPwd' into text field 'id=newPwdField'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.627" endtime="20200222 11:39:56.766"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.767" level="INFO">Typing text 'testPwd' into text field 'id=pwdConfirmField'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.766" endtime="20200222 11:39:56.922"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_SAVE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:56.923" level="INFO">Clicking button 'id=pwdSaveButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:56.923" endtime="20200222 11:39:57.012"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:56.343" endtime="20200222 11:39:57.013"></status>
+</kw>
+<kw name="Password change succeeded" library="SettingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have changed your password</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:57.013" endtime="20200222 11:39:57.261"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:57.013" endtime="20200222 11:39:57.262"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:39:57.264" endtime="20200222 11:39:57.368"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:57.263" endtime="20200222 11:39:57.369"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:52.042" endtime="20200222 11:39:57.369" critical="yes"></status>
+</test>
+<test id="s1-s3-t5" name="Show error message when old password is wrong">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:39:57.376" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:39:57.375" endtime="20200222 11:39:58.893"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:57.374" endtime="20200222 11:39:58.894"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:58.895" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:39:58.895" endtime="20200222 11:39:59.186"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:58.895" endtime="20200222 11:39:59.186"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:59.188" endtime="20200222 11:39:59.212"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:59.187" endtime="20200222 11:39:59.212"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:59.213" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:39:59.212" endtime="20200222 11:39:59.335"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:59.336" endtime="20200222 11:39:59.363"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:58.895" endtime="20200222 11:39:59.364"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:59.365" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:39:59.364" endtime="20200222 11:39:59.512"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:59.513" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:39:59.513" endtime="20200222 11:39:59.648"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:59.649" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:39:59.648" endtime="20200222 11:39:59.748"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:59.364" endtime="20200222 11:39:59.748"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:39:59.749" endtime="20200222 11:39:59.829"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:39:59.844" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:39:59.829" endtime="20200222 11:39:59.844"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:59.748" endtime="20200222 11:39:59.844"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:58.894" endtime="20200222 11:39:59.844"></status>
+</kw>
+<kw name="Change password" library="SettingPage">
+<arguments>
+<arg>wrongPwd</arg>
+<arg>newPwd</arg>
+<arg>newPwd</arg>
+</arguments>
+<kw name="Go to setting page" library="SettingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SETTING_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:59.845" level="INFO">Clicking element 'id=settingDropdown'.</msg>
+<status status="PASS" starttime="20200222 11:39:59.845" endtime="20200222 11:39:59.903"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:59.844" endtime="20200222 11:39:59.903"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT_SETTING_ITEM}</arg>
+</arguments>
+<msg timestamp="20200222 11:39:59.905" level="INFO">Clicking element 'id=accountSettingItem'.</msg>
+<status status="PASS" starttime="20200222 11:39:59.903" endtime="20200222 11:40:00.013"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${OLD_PWD_FIELD}</arg>
+<arg>${OLD_PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:00.024" level="INFO">Typing text 'wrongPwd' into text field 'id=oldPwdField'.</msg>
+<status status="PASS" starttime="20200222 11:40:00.014" endtime="20200222 11:40:00.189"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NEW_PWD_FIELD}</arg>
+<arg>${NEW_PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:00.190" level="INFO">Typing text 'newPwd' into text field 'id=newPwdField'.</msg>
+<status status="PASS" starttime="20200222 11:40:00.190" endtime="20200222 11:40:00.345"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_CONFIRM_FIELD}</arg>
+<arg>${PWD_CONFIRM}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:00.345" level="INFO">Typing text 'newPwd' into text field 'id=pwdConfirmField'.</msg>
+<status status="PASS" starttime="20200222 11:40:00.345" endtime="20200222 11:40:00.500"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${PWD_SAVE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:00.500" level="INFO">Clicking button 'id=pwdSaveButton'.</msg>
+<status status="PASS" starttime="20200222 11:40:00.500" endtime="20200222 11:40:00.612"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:59.844" endtime="20200222 11:40:00.612"></status>
+</kw>
+<kw name="Display error" library="SettingPage">
+<arguments>
+<arg>Fail to change password, please make sure that your old password is correct</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${error}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:40:00.613" endtime="20200222 11:40:00.646"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:00.613" endtime="20200222 11:40:00.646"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:40:00.646" endtime="20200222 11:40:00.724"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:00.646" endtime="20200222 11:40:00.724"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:39:57.371" endtime="20200222 11:40:00.724" critical="yes"></status>
+</test>
+<doc>Test register</doc>
+<status status="PASS" starttime="20200222 11:39:40.483" endtime="20200222 11:40:00.727"></status>
+</suite>
+<suite id="s1-s4" name="04 Blog" source="/home/local/luoyumo/Desktop/microblog_backend/tests/robot_tests/Tests/04_Blog.robot">
+<test id="s1-s4-t1" name="Can add a new blog">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200222 11:40:00.757" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200222 11:40:00.757" endtime="20200222 11:40:02.254"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:00.756" endtime="20200222 11:40:02.255"></status>
+</kw>
+<kw name="Login for other operations" library="LoginPage">
+<arguments>
+<arg>${USERNAME_1}</arg>
+<arg>${PWD_1}</arg>
+</arguments>
+<kw name="Go to login page" library="LoginPage">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:02.259" level="INFO">Opening url 'http://localhost:3003'</msg>
+<status status="PASS" starttime="20200222 11:40:02.258" endtime="20200222 11:40:02.520"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:02.257" endtime="20200222 11:40:02.521"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Welcome to our Microblog Platform!</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:40:02.522" endtime="20200222 11:40:02.551"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:02.521" endtime="20200222 11:40:02.551"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGINMENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:02.551" level="INFO">Clicking element 'id=loginMenu'.</msg>
+<status status="PASS" starttime="20200222 11:40:02.551" endtime="20200222 11:40:02.681"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOGIN_HEADING}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:40:02.682" endtime="20200222 11:40:02.707"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:02.257" endtime="20200222 11:40:02.707"></status>
+</kw>
+<kw name="Start login" library="LoginPage">
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:02.710" level="INFO">Typing text 'testuser' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20200222 11:40:02.710" endtime="20200222 11:40:02.854"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PWD_FIELD}</arg>
+<arg>${PWD}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:02.855" level="INFO">Typing text 'testPwd' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20200222 11:40:02.855" endtime="20200222 11:40:02.996"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:02.998" level="INFO">Clicking button 'id=loginButton'.</msg>
+<status status="PASS" starttime="20200222 11:40:02.997" endtime="20200222 11:40:03.102"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:02.708" endtime="20200222 11:40:03.103"></status>
+</kw>
+<kw name="Login succeeded" library="LoginPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You have logged in</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:40:03.103" endtime="20200222 11:40:03.170"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Home</arg>
+</arguments>
+<msg timestamp="20200222 11:40:03.194" level="INFO">Current page contains text 'Home'.</msg>
+<status status="PASS" starttime="20200222 11:40:03.170" endtime="20200222 11:40:03.194"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:03.103" endtime="20200222 11:40:03.194"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:02.256" endtime="20200222 11:40:03.194"></status>
+</kw>
+<kw name="Add a blog" library="AddBlog">
+<arguments>
+<arg>${BLOG_CONTENT}</arg>
+<arg>/home/local/luoyumo/Desktop/microblog_backend/tests/robot_tests/Tests${/}testImage.png</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${BLOG_TEXT_FIELD}</arg>
+<arg>${BLOG_CONTNT}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:03.195" level="INFO">Typing text 'This is a new blog' into text field 'id=blogTextField'.</msg>
+<status status="PASS" starttime="20200222 11:40:03.195" endtime="20200222 11:40:03.370"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${INSERT_IMAGE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:03.371" level="INFO">Clicking button 'id=insertImageButton'.</msg>
+<status status="PASS" starttime="20200222 11:40:03.370" endtime="20200222 11:40:03.636"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<arguments>
+<arg>${FILE_INPUT}</arg>
+<arg>${FILE_PATH}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:03.637" level="INFO">Sending /home/local/luoyumo/Desktop/microblog_backend/tests/robot_tests/Tests/testImage.png to browser.</msg>
+<status status="PASS" starttime="20200222 11:40:03.636" endtime="20200222 11:40:03.802"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${IMAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:40:03.802" endtime="20200222 11:40:03.822"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${PUBLISH_BLOG_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:03.822" level="INFO">Clicking button 'id=publishBlogButton'.</msg>
+<status status="PASS" starttime="20200222 11:40:03.822" endtime="20200222 11:40:03.910"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:03.195" endtime="20200222 11:40:03.910"></status>
+</kw>
+<kw name="Blog has been published successfully" library="AddBlog">
+<arguments>
+<arg>${BLOG_CONTENT}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>You created a blog</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:40:03.911" endtime="20200222 11:40:04.160"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${PROFILE_MENU}</arg>
+</arguments>
+<msg timestamp="20200222 11:40:04.161" level="INFO">Clicking element 'id=profileMenu'.</msg>
+<status status="PASS" starttime="20200222 11:40:04.160" endtime="20200222 11:40:04.297"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${BLOG_CONTNT}</arg>
+</arguments>
+<status status="PASS" starttime="20200222 11:40:04.297" endtime="20200222 11:40:04.563"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:03.910" endtime="20200222 11:40:04.564"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200222 11:40:04.565" endtime="20200222 11:40:04.623"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:04.564" endtime="20200222 11:40:04.624"></status>
+</kw>
+<status status="PASS" starttime="20200222 11:40:00.756" endtime="20200222 11:40:04.625" critical="yes"></status>
+</test>
+<doc>Test register</doc>
+<status status="PASS" starttime="20200222 11:40:00.734" endtime="20200222 11:40:04.631"></status>
+</suite>
+<status status="PASS" starttime="20200222 11:39:21.846" endtime="20200222 11:40:04.635"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="13" fail="0">Critical Tests</stat>
+<stat pass="13" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0">Login</stat>
+<stat pass="5" fail="0">Register</stat>
+</tag>
+<suite>
+<stat pass="13" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="5" fail="0" id="s1-s1" name="01 Register">Tests.01 Register</stat>
+<stat pass="2" fail="0" id="s1-s2" name="02 Login">Tests.02 Login</stat>
+<stat pass="5" fail="0" id="s1-s3" name="03 Setting">Tests.03 Setting</stat>
+<stat pass="1" fail="0" id="s1-s4" name="04 Blog">Tests.04 Blog</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
