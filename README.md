@@ -51,6 +51,9 @@ The app will start at http://localhost:3003
 `npm run test`
 
 #### Robot Framework testing
+Please check that you have [Robot Framework](https://github.com/robotframework/robotframework#installation) and [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary#installation) installed. 
+
+Then run
 `npm run eeTest`
 `robot -d tests/robot_tests/Results tests/robot_tests/Tests/04_Blog.robot`
 
