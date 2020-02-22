@@ -43,3 +43,16 @@ If you haven't installed docker or docker-compose, please check the download ins
 `npm run dev`
 
 The app will start at http://localhost:3003
+
+### For testing
+#### Unit testing
+
+`npm run create_test_db`
+`npm run test`
+
+#### Robot Framework testing
+`npm run eeTest`
+`robot -d tests/robot_tests/Results tests/robot_tests/Tests/04_Blog.robot`
+
+The testing results will be saved in tests/robot_tests/Results
+
