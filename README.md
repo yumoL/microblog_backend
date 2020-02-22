@@ -42,4 +42,4 @@ If you haven't installed docker or docker-compose, please check the download ins
 
 `npm run dev`
 
-The app will start at http://localhost:3003/home
+The app will start at http://localhost:3003
