@@ -3,7 +3,7 @@
  */
 
 const { Blog, Image, User } = require('../database/models')
-const { formatUser } = require('./_format')
+const { formatUser, formatBlog } = require('./_format')
 
 async function createBlog({ userId, content, urls }){
   const blogResult = await Blog.create({
@@ -58,6 +58,7 @@ async function getBlogListByUser({ userId, pageIndex=0, pageSize=5 }){
     ]
   })
   let blogList = res.rows.map(row => row.dataValues)
+  blogList = formatBlog(blogList)
   blogList = blogList.map(blogItem => {
     const user = blogItem.user.dataValues
     blogItem.user = formatUser(user)

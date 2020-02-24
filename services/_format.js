@@ -2,7 +2,7 @@
  * @description format data
  */
 require('dotenv').config()
-//const { DEFAULT_PICTURE } = require('../constants')
+const { timeFormatter } = require('../utils/datetime')
 
 /**
  * defaulted user's picture
@@ -30,6 +30,31 @@ function formatUser(users) {
   return _formatUserPicture(users)
 }
 
+/**
+ * format DB datetime
+ * @param {} obj DB datetime
+ */
+function _formatDBTime(obj) {
+  obj.createdAt = timeFormatter(obj.createdAt)
+  obj.updatedAt = timeFormatter(obj.updatedAt)
+  return obj
+}
+
+/**
+ * format blog/blog list
+ * @param {*Array/Object} blogs bloglist or single blog
+ */
+function formatBlog(blogs) {
+  if(blogs == null) {
+    return
+  }
+  if(blogs instanceof Array){
+    return blogs.map(_formatDBTime)
+  }
+  return _formatDBTime(blogs)
+}
+
 module.exports = {
-  formatUser
+  formatUser,
+  formatBlog
 }
