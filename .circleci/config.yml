@@ -38,7 +38,10 @@ jobs:
       - run: sudo apt-get install python3-pip -y
       - run: pip3 install robotframework
       - run: pip3 install --upgrade robotframework-seleniumlibrary
-      - run: npm run eeTest
+      - run: 
+          name: start server
+          command: npm run eeTest
+          background: true
       - run: npm run rbt_test
   migratedb:
     docker:
