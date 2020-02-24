@@ -33,16 +33,8 @@ jobs:
             done
             echo Failed waiting for MySQL && exit 1
       - run: npm run create_test_db
-      # - run: npm test
-      - run: sudo apt-get update && sudo apt-get install python3 -y
-      - run: sudo apt-get install python3-pip -y
-      - run: pip3 install robotframework
-      - run: pip3 install --upgrade robotframework-seleniumlibrary
-      - run: 
-          name: start server
-          command: npm run eeTest
-          background: true
-      - run: npm run rbt_test
+      - run: npm test
+      
   migratedb:
     docker:
       - image: circleci/node:10
@@ -68,9 +60,9 @@ workflows:
   test-build-deploy:
     jobs:
       - test_backend
-      # - migratedb:
-      #     requires:
-      #       - test_backend
-      # - deploy:
-      #     requires: 
-      #       - migratedb
+      - migratedb:
+          requires:
+            - test_backend
+      - deploy:
+          requires: 
+            - migratedb
