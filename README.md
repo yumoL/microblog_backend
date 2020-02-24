@@ -55,7 +55,7 @@ Please check that you have [Robot Framework](https://github.com/robotframework/r
 
 Then run
 `npm run eeTest`
-`robot -d tests/robot_tests/Results tests/robot_tests/Tests/04_Blog.robot`
+`robot -d tests/robot_tests/Results tests/robot_tests/Tests`
 
 The testing results will be saved in tests/robot_tests/Results
 
