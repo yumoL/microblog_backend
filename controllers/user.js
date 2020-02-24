@@ -20,7 +20,7 @@ require('dotenv').config()
   * @param {string} userName
   */
 async function isExist(userName) {
-  const userInfo = await getUserInfo(userName)
+  const userInfo = await getUserInfo({ userName })
   if (userInfo) {
     return new SuccessModel(userInfo)
   }
@@ -56,7 +56,7 @@ async function register(ctx, userName, password) {
  * @param {*} needCrypto need to encrypt the password in plain text
  */
 async function login(ctx, userName, password, needCrypto = true) {
-  let userInfo = await getUserInfo(userName, needCrypto ? doCrypto(password): password)
+  let userInfo = await getUserInfo({ userName, password: needCrypto ? doCrypto(password): password })
   if (!userInfo) {
     ctx.status = 401
     return new ErrorModel(loginFailInfo)

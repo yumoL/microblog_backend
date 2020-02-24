@@ -11,10 +11,18 @@ const doCrypto = require('../utils/crypt')
  * @param {string} userName
  * @param {string} password
  */
-async function getUserInfo(userName, password) {
-  const whereOpt = {
-    userName
+async function getUserInfo({ id, userName, password }) {
+  let whereOpt
+  if(id){
+    whereOpt = {
+      id
+    }
+  } else{
+    whereOpt = {
+      userName
+    }
   }
+
   if(password){
     Object.assign(whereOpt, { password })
   }
