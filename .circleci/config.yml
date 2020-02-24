@@ -8,6 +8,7 @@ jobs:
       - image: circleci/mysql:8.0.18
         environment:
           MYSQL_ROOT_PASSWORD: password
+      - image: circleci/python:3.6.2-stretch-browsers
     environment:
       DEFAULT_PICTURE: https://icon-library.net/icon/default-user-icon-14.html
       JWT_SECRET_KEY: Luan_7788$#
@@ -33,7 +34,11 @@ jobs:
             done
             echo Failed waiting for MySQL && exit 1
       - run: npm run create_test_db
-      - run: npm test
+      # - run: npm test
+      - run: pip install robotframework
+      - run: pip install --upgrade robotframework-seleniumlibrary
+      - run: npm run eeTest
+      - run: npm run rbt_test
   migratedb:
     docker:
       - image: circleci/node:10
@@ -59,9 +64,9 @@ workflows:
   test-build-deploy:
     jobs:
       - test_backend
-      - migratedb:
-          requires:
-            - test_backend
-      - deploy:
-          requires: 
-            - migratedb
+      # - migratedb:
+      #     requires:
+      #       - test_backend
+      # - deploy:
+      #     requires: 
+      #       - migratedb
