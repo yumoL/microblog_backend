@@ -35,3 +35,4 @@ total 62.5
 | 14.2  | 0.5 | install and learn to use Postman|
 | 15.2, 16.2  | 5.5   | learn robot framework and apply end-to-end testing for register and login|
 | 19.2, 20.2  | 3.5   | end-to-end testing for account setting and blog adding|
+| 24.2 | 2.5 | Improve layout of Profile page(show user info in on his profile page), format mysql timestamp, fix broken test|
