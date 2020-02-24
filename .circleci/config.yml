@@ -35,6 +35,7 @@ jobs:
       - run: npm run create_test_db
       # - run: npm test
       - run: sudo apt-get update && sudo apt-get install python3 -y
+      - run: sudo apt-get install python3-pip -y
       - run: pip install robotframework
       - run: pip install --upgrade robotframework-seleniumlibrary
       - run: npm run eeTest
