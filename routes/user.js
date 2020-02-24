@@ -11,7 +11,7 @@ router.prefix('/api/user')
 
 router.post('/isExist', async (ctx, next) => {
   const { userName } = ctx.request.body
-  ctx.body = await isExist(userName)
+  ctx.body = await isExist({ userName })
 })
 
 router.post('/register', genValidator(userValidate), async (ctx, next) => {
@@ -24,12 +24,19 @@ router.post('/login', async (ctx, next) => {
   ctx.body = await login(ctx, userName, password)
 })
 
+/**
+ * Get userinfo by id
+ */
+router.get('/:id', async (ctx, next) => {
+  const id = ctx.params.id
+  ctx.body = await isExist({ id })
+})
+
 //change info
 router.patch('/changeInfo/:id', genValidator(userValidate), async(ctx,next) => {
   const id = ctx.params.id
   const { newUserName, newPicture } = ctx.request.body
   ctx.body = await changeInfo(ctx, { newUserName, newPicture }, id)
-  console.log('body', ctx.body)
 })
 
 router.patch('/changePwd/:id', genValidator(userValidate), async(ctx,next) => {

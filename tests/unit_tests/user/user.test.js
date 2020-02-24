@@ -4,7 +4,7 @@
  */
 
 const server = require('../server')
-const { User } = require('../../database/models')
+const { User } = require('../../../database/models')
 const { testUser, register, login, registerAndLogin } = require('../testHelper')
 
 describe('Register', () => {

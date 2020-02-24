@@ -1,5 +1,5 @@
 const server = require('./server')
-const { User } = require('../database/models')
+const { User } = require('../../database/models')
 
 const userName = `u_${Date.now()}`
 const password = `p_${Date.now()}`

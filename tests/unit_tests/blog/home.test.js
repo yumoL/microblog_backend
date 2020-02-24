@@ -3,7 +3,7 @@
  */
 
 const server = require('../server')
-const { Blog } = require('../../database/models')
+const { Blog } = require('../../../database/models')
 const { registerAndLogin } = require('../testHelper')
 
 describe('blog', () => {

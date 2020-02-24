@@ -3,7 +3,7 @@
  * @description test User model
  */
 
-const { User } = require('../../database/models')
+const { User } = require('../../../database/models')
 
 test('Correct User attributes', () => {
   const userName = 'userTest'

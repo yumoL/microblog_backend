@@ -2,7 +2,7 @@
  * @description test blog and image model
  */
 
-const { Blog, Image } = require('../../database/models')
+const { Blog, Image } = require('../../../database/models')
 
 test('Correct Blog attributes', () => {
   const content = 'blog content'

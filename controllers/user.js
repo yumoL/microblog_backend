@@ -16,11 +16,16 @@ const { JWT_SECRET_KEY } = require('../constants')
 require('dotenv').config()
 
 /**
-  * Check if a username is existed
-  * @param {string} userName
+  * Check if a username/id is existed
   */
-async function isExist(userName) {
-  const userInfo = await getUserInfo({ userName })
+async function isExist({ id,userName }) {
+  let userInfo
+  if(id){
+    userInfo = await getUserInfo({ id })
+  } else {
+    userInfo = await getUserInfo({ userName })
+  }
+
   if (userInfo) {
     return new SuccessModel(userInfo)
   }
@@ -32,7 +37,7 @@ async function isExist(userName) {
  * @param {*} param0
  */
 async function register(ctx, userName, password) {
-  const userInfo = await getUserInfo(userName)
+  const userInfo = await getUserInfo({ userName })
   if (userInfo) {
     ctx.status = 400
     return new ErrorModel(registerUsernameExistInfo)
