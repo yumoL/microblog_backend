@@ -8,14 +8,14 @@ const testUser = {
   password
 }
 
-const register = async (user) => {
+async function register (user) {
   const response = await server
     .post('/api/user/register')
     .send(user)
   return response
 }
 
-const login = async (user) => {
+async function login (user) {
   const response = await server
     .post('/api/user/login')
     .send(user)
@@ -25,7 +25,7 @@ const login = async (user) => {
 /**
  * Used in test where login is required
  */
-const registerAndLogin = async() => {
+async function registerAndLogin(){
   await User.destroy({ where: {} })
   await register(testUser)
   const res = await login(testUser)
@@ -35,6 +35,7 @@ const registerAndLogin = async() => {
   const loggedInUser = { id, token }
   return loggedInUser
 }
+
 
 module.exports = {
   testUser,
