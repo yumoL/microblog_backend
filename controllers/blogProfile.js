@@ -9,6 +9,7 @@ async function getProfileBlogList({ userId, pageIndex = 0 }){
     pageSize: process.env.PAGE_SIZE || PAGE_SIZE
   })
   return new SuccessModel({
+    allNumber: res.allNumber,
     blogList: res.blogList,
   })
 }

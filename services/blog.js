@@ -55,7 +55,8 @@ async function getBlogListByUser({ userId, pageIndex=0, pageSize=5 }){
         attributes: ['url'],
         as: 'images'
       }
-    ]
+    ],
+    distinct: true
   })
   let blogList = res.rows.map(row => row.dataValues)
   blogList = formatBlog(blogList)
@@ -67,6 +68,7 @@ async function getBlogListByUser({ userId, pageIndex=0, pageSize=5 }){
   return {
     //res.count is the total number of all blogs, it has nothing to do with the limit.
     //res.rows is the query result considering the limit
+    allNumber: res.count,
     blogList
   }
 }
