@@ -60,13 +60,20 @@ describe('Login', () => {
   })
 })
 
-describe('Change user info', () => {
+describe('User info', () => {
   let id
   let token
   beforeEach(async () => {
     const loggedInUser = await registerAndLogin()
     id = loggedInUser.id
     token = loggedInUser.token
+  })
+
+  test('Can get user info by id', async() => {
+    const res = await server.get(`/api/user/${id}`)
+      .set('Authorization', 'bearer '+token)
+    expect(res.body.errno).toBe(0)
+    expect(res.body.data.id).toBe(id)
   })
 
   test('Can change basic info', async() => {
@@ -90,6 +97,7 @@ describe('Change user info', () => {
     expect(res.body.errno).not.toBe(0)
   })
 })
+
 
 module.exports = {
   register,

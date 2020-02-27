@@ -36,10 +36,21 @@ async function registerAndLogin(){
   return loggedInUser
 }
 
+async function createBlog({ token, userId,
+  content='automated content' + Date.now(),
+  urls= ['/test1.png', '/test2.png'] }){
+
+  const res = await server.post(`/api/blog/create/${userId}`)
+    .send ({ content,urls })
+    .set('Authorization', 'bearer '+token)
+  return res
+}
+
 
 module.exports = {
   testUser,
   register,
   login,
-  registerAndLogin
+  registerAndLogin,
+  createBlog
 }

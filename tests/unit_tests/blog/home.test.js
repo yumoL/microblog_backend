@@ -2,11 +2,10 @@
  * @description test blogHome api
  */
 
-const server = require('../server')
 const { Blog } = require('../../../database/models')
-const { registerAndLogin } = require('../testHelper')
+const { registerAndLogin, createBlog } = require('../testHelper')
 
-describe('blog', () => {
+describe('home page', () => {
   let userId
   let token
   beforeEach(async () => {
@@ -22,9 +21,7 @@ describe('blog', () => {
       '/test1.png',
       '/test2.png'
     ]
-    const res = await server.post(`/api/blog/create/${userId}`)
-      .send ({ content,urls })
-      .set('Authorization', 'bearer '+token)
+    const res = await createBlog({ token, userId })
     expect(res.body.errno).toBe(0)
     expect(res.body.data.content).toBe(content)
     expect(res.body.data.images[0]).toEqual({ url:urls[0] })
