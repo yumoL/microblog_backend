@@ -1,5 +1,5 @@
 # Hour Accounting
-total 67
+total 69.5
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
@@ -37,3 +37,4 @@ total 67
 | 19.2, 20.2  | 3.5   | end-to-end testing for account setting and blog adding|
 | 24.2 | 2.5 | Improve layout of Profile page(show user info in on his profile page), format mysql timestamp, fix broken test|
 | | 2 | try to run robot framework on CircleCI (failed) |
+|27.2| 2.5 | implement feature to load more blogs for profile page|
