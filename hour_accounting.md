@@ -1,5 +1,5 @@
 # Hour Accounting
-total 69.5
+total 73.5
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
@@ -39,3 +39,4 @@ total 69.5
 | | 2 | try to run robot framework on CircleCI (failed) |
 |27.2| 2.5 | implement feature to load more blogs for profile page|
 |    | 0.5 | test APIs used in profile page|
+|28.2| 4   | learn Robot Framework, refactor rbt testing so that each test case is independent, test feature to load more blogs|
