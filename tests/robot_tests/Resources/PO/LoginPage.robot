@@ -26,8 +26,6 @@ Login succeeded
   Wait Until Page Contains  You have logged in
   Page Should Contain   Home
 
-Display errors
-  Wait Until Page Contains  Login failed, wrong username or password
 
 Login for other operations
   [Arguments]  ${USERNAME}  ${PWD}

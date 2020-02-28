@@ -29,10 +29,6 @@ Register succeeded
   Wait Until Page Contains  Register succeeded
   Page Should Contain  Log in to your account
 
-Display errors
-  [Arguments]  ${ERROR}
-  Wait Until Page Contains  ${ERROR}
-
 Register new user successfully
   [Arguments]  ${USERNAME}  ${PWD}
   Go to register page

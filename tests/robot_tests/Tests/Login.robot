@@ -1,12 +1,22 @@
 ***Settings***
 Documentation  Test register 
+Resource  ../Resources/App.robot
 Resource  ../Resources/PO/LoginPage.robot
 Resource  ../Resources/Common.robot
+Resource  ../Resources/Database.robot
 Variables  ../Resources/Variables.py
-# Suite Setup  Insertg testing data
-Test Setup  Begin Web Test
-Test Teardown  End Web Test
-# Suite Teardown  Cleanup testing data
+
+Test Setup  Test Setup
+Test Teardown  Test Teardown
+
+***Keywords***
+Test Setup
+  Common.Begin Web Test
+  App.Register a new user successfully  ${USERNAME_1}  ${PWD_1}
+
+Test Teardown
+  Database.Clean data
+  Common.End Web Test
 
 ***Variables***
 
@@ -14,11 +24,12 @@ Test Teardown  End Web Test
 ***Test Cases***
 User should be able to login with correct credentials
   [Tags]  Login
-  LoginPage.Login for other operations  ${USERNAME_1}  ${PWD_1}
+ 
+  App.Login successfully  ${USERNAME_1}  ${PWD_1}
 
 User should not be able to login with wrong credentials
   [Tags]  Login
   LoginPage.Go to login page
   LoginPage.Start login  ${USERNAME_1}  wrongPwd
-  LoginPage.Display errors
+  App.Display error  Login failed, wrong username or password
 

@@ -10,7 +10,7 @@ ${NEW_USERNAME_FIELD} =  id=newUserNameField
 ${SAVE_BI_CHANGE_BUTTON}=  id=saveBIChangeButton
 ${OLD_PWD_FIELD} =  id=oldPwdField
 ${NEW_PWD_FIELD} =  id=newPwdField
-${PWD_CONFIRM_FIELD} =  id=pwdConfirmField
+${NEW_PWD_CONFIRM_FIELD} =  id=pwdConfirmField
 ${PWD_SAVE_BUTTON} =  id=pwdSaveButton
 
 ***Keywords***
@@ -29,7 +29,7 @@ Change password
   Click Element  ${ACCOUNT_SETTING_ITEM}
   Input Text  ${OLD_PWD_FIELD}  ${OLD_PWD}
   Input Text  ${NEW_PWD_FIELD}  ${NEW_PWD}
-  Input Text  ${PWD_CONFIRM_FIELD}  ${PWD_CONFIRM}
+  Input Text  ${NEW_PWD_CONFIRM_FIELD}  ${PWD_CONFIRM}
   Click Button  ${PWD_SAVE_BUTTON}
 
 Username change succeeded
@@ -43,7 +43,3 @@ Logout
   Go to setting page
   Click Button  ${LOGOUT_BUTTON}
   Wait Until Page Contains  Log in to your account
-
-Display error
-  [Arguments]  ${error}
-  Wait Until Page Contains  ${error}
