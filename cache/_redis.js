@@ -7,7 +7,7 @@ const redis = require('redis')
 
 const REDIS_CONF = isProd ? {
   port: 9539,
-  host: 'redis://h:pdf528cff93aac4e3a1b9c561d2bd6972b9538fe997b65e7b146e64cdcc9a6bd3@ec2-3-226-204-177.compute-1.amazonaws.com'
+  host: 'ec2-3-226-204-177.compute-1.amazonaws.com'
 }:{
   port: 6379,
   host: '127.0.0.1'
