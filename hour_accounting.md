@@ -1,5 +1,5 @@
 # Hour Accounting
-total 73.5
+total 75.5
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
@@ -40,3 +40,4 @@ total 73.5
 |27.2| 2.5 | implement feature to load more blogs for profile page|
 |    | 0.5 | test APIs used in profile page|
 |28.2| 4   | learn Robot Framework, refactor rbt testing so that each test case is independent, test feature to load more blogs|
+| 4.3| 2   | get blogs from redis cache, Discover Page to show blogs of all users|
