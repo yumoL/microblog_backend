@@ -25,8 +25,11 @@ async function login (user) {
 /**
  * Used in test where login is required
  */
-async function registerAndLogin(){
-  await User.destroy({ where: {} })
+async function registerAndLogin(deletePreviousUser=true){
+  if(deletePreviousUser){
+    await User.destroy({ where: {} })
+  }
+
   await register(testUser)
   const res = await login(testUser)
   // get user id and token

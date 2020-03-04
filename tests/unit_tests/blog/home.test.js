@@ -23,7 +23,6 @@ describe('home page', () => {
     ]
     const res = await createBlog({ token, userId })
     expect(res.body.errno).toBe(0)
-    expect(res.body.data.content).toBe(content)
     expect(res.body.data.images[0]).toEqual({ url:urls[0] })
   })
 })
