@@ -8,6 +8,7 @@ jobs:
       - image: circleci/mysql:8.0.18
         environment:
           MYSQL_ROOT_PASSWORD: password
+      - image: redis
     environment:
       DEFAULT_PICTURE: https://icon-library.net/icon/default-user-icon-14.html
       JWT_SECRET_KEY: Luan_7788$#
