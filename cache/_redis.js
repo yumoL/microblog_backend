@@ -3,7 +3,11 @@
  */
 
 const redis = require('redis')
-const { REDIS_CONF } = require('../confighehe/config')
+
+const REDIS_CONF = {
+  port: 6379,
+  host: '127.0.0.1'
+}
 
 // create a client
 const redisClient = redis.createClient(REDIS_CONF.port, REDIS_CONF.host)
@@ -13,11 +17,12 @@ redisClient.on('error', err => {
 
 /**
   * redis setting
-  * @param {string} key 
-  * @param {string} val 
+  * @param {string} key
+  * @param {string} val
   * @param {number} timeout (s)
   */
-function set(key, val, timeout = 60 * 60) {
+function set(key, val, timeout = 60*60) {
+  console.log('setting cache')
   if (typeof val === 'object') {
     val = JSON.stringify(val)
   }
@@ -27,7 +32,7 @@ function set(key, val, timeout = 60 * 60) {
 
 /**
   * get value according to key
-  * @param {string} key 
+  * @param {string} key
   */
 function get(key) {
   const promise = new Promise((resolve, reject) => {
