@@ -4,6 +4,7 @@ Resource  ./PO/LoginPage.robot
 Resource  ./PO/SettingPage.robot
 Resource  ./PO/HomePage.robot
 Resource  ./PO/ProfilePage.robot
+Resource  ./PO/DiscoverPage.robot
 
 ***Keywords***
 Register a new user successfully
@@ -55,3 +56,9 @@ Load more blogs
   ProfilePage.Go to profile page
   ProfilePage.Load more blogs
   ProfilePage.Verify more blogs loaded  @{BLOGS}[0]
+
+Show blogs of all users in Discover page
+  [Arguments]  @{BLOGS}
+  DiscoverPage.Go to discover page
+  DiscoverPage.Verify a blog loaded  @{BLOGS}[-1]
+  DiscoverPage.Verify a blog loaded  @{BLOGS}[-2]
