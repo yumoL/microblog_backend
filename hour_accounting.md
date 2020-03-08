@@ -42,4 +42,4 @@ total 77.5
 |28.2| 4   | learn Robot Framework, refactor rbt testing so that each test case is independent, test feature to load more blogs|
 | 4.3| 2   | get blogs from redis cache, Discover Page to show blogs of all users|
 |    | 2   | test api to get all blogs from cache, config redis in prouction|
-| 6.3| 1   | end-to-end test for discover page, plan the feature of following other users|
+| 6.3| 0.5 | end-to-end test for discover page|
