@@ -6,8 +6,9 @@ This is a microblog platform where people can post blogs.
 
 Possible features
 - Register and log in to the application
+
 After login
-- Change avatar, username or password
+- Change own avatar, username or password
 - Post a blog
 - See a list of own blogs and other users' blogs
 - Logout
