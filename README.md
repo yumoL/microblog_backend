@@ -14,13 +14,15 @@ After login
 - Logout
 
 [Demo](http://microblogdevops.herokuapp.com)
-
+![image of index]
+(https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/index.png)
 [Frontend](https://github.com/yumoL/microblog_client)
 
 [Hour Accounting](https://github.com/yumoL/microblog_backend/blob/master/hour_accounting.md)
 
 ### User guide
 - Go to the [website](http://microblogdevops.herokuapp.com)
+
 - Register
 - Log in
 - Setting
