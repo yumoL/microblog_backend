@@ -1,5 +1,5 @@
 # Hour Accounting
-total 77.5
+total 69
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
@@ -33,13 +33,12 @@ total 77.5
 |       | 3   | list blogs by user in frontend (display images in a reasonable way + zoom out an image on click|
 |       | 2   | images can be removed before upload|
 | 14.2  | 0.5 | install and learn to use Postman|
-| 15.2, 16.2  | 5.5   | learn robot framework and apply end-to-end testing for register and login|
-| 19.2, 20.2  | 3.5   | end-to-end testing for account setting and blog adding|
+| 15.2, 16.2  | 3   | learn robot framework and apply end-to-end testing for register and login|
+| 19.2, 20.2  | 2   | end-to-end testing for account setting and blog adding|
 | 24.2 | 2.5 | Improve layout of Profile page(show user info in on his profile page), format mysql timestamp, fix broken test|
-| | 2 | try to run robot framework on CircleCI (failed) |
 |27.2| 2.5 | implement feature to load more blogs for profile page|
 |    | 0.5 | test APIs used in profile page|
-|28.2| 4   | learn Robot Framework, refactor rbt testing so that each test case is independent, test feature to load more blogs|
+|28.2| 2   | learn Robot Framework, refactor rbt testing so that each test case is independent, test feature to load more blogs|
 | 4.3| 2   | get blogs from redis cache, Discover Page to show blogs of all users|
 |    | 2   | test api to get all blogs from cache, config redis in prouction|
 | 6.3| 0.5 | end-to-end test for discover page|
