@@ -36,11 +36,9 @@ Possible features
 
 * Setting
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting_nav.png" width=400 height=400>
-  * Account setting
-  You can change your username, avatar and pasword by clicking the "Account setting"
+  * Account setting: you can change your username, avatar and pasword by clicking the "Account setting"
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting.png" width=400 height=400>
-  * Logout
-  You can logout by clicking the "Logout" button in the dropdown
+  * Logout: you can logout by clicking the "Logout" button in the dropdown
     * You'll see a message when your session expired at which time you should login again.The expiration time is one hour.
 
 - Profile page
