@@ -4,6 +4,7 @@
 const { isProd } = require('../utils/env')
 
 const redis = require('redis')
+require('dotenv').config()
 
 const REDIS_CONF = {
   port: 6379,
@@ -11,7 +12,7 @@ const REDIS_CONF = {
 }
 
 // create a client
-const redisClient = isProd ? redis.createClient(process.env.REDIS_CONF || 'redis://h:pdf528cff93aac4e3a1b9c561d2bd6972b9538fe997b65e7b146e64cdcc9a6bd3@ec2-3-226-204-177.compute-1.amazonaws.com:9539')
+const redisClient = isProd ? redis.createClient(process.env.REDIS_CONF)
   : redis.createClient(REDIS_CONF.port, REDIS_CONF.host)
 redisClient.on('error', err => {
   console.log('redis error', err)
