@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 Resource  ./LandingPage.robot
 
 ***Variables***
-${DISCOVER_MENU} =  id=aa
+${DISCOVER_MENU} =  id=discoverMenu
 
 ***Keywords***
 Go to discover page
