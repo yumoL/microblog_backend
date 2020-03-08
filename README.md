@@ -23,23 +23,23 @@ Possible features
 * Go to the [website](http://microblogdevops.herokuapp.com)
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/index.png" width=400 height=400>
 
-* Log in: if you already have an account, you can go to the login page by clicking the "Login" in the navigation bar
+* Log in: if you already have an account, you can go to the login page by clicking the "Login" in the navigation bar.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/login.png" width=400 height=400>
 
-* Register: click the "Register" in the navigation bar to go to the register page. You will be redirected to the login page after registration succeeded
+* Register: Click the "Register" in the navigation bar to go to the register page. You will be redirected to the login page after registration succeeded.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/register_ok.png" width=400 height=400>
-
-  * Username should be unique, otherwise a warning message will be displayed
+  * Username should be unique, otherwise a warning message will be displayed.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/register_existed_username.png" width=400 height=400>
 
-* Home page: after login, you'll be directed to the home page where you can post blogs
+* Home page: After login, you'll be directed to the home page where you can post blogs. You can also add pictures(maximum 3) with your blog.
+<img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/post_blog.png" width=400 height=400>
 
 * Setting
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting_nav.png" width=400 height=400>
-  * Account setting: you can change your username, avatar and pasword by clicking the "Account setting"
+  * Account setting: You can change your username, avatar and pasword by clicking the "Account setting"
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting.png" width=400 height=400>
-  * Logout: you can logout by clicking the "Logout" button in the dropdown
-    * You'll see a message when your session expired at which time you should login again.The expiration time is one hour.
+  * Logout: You can log out by clicking the "Logout" button in the dropdown
+  * You'll see a message when your session expired at which time you should login again.The expiration time is one hour.
 
 - Profile page
 
