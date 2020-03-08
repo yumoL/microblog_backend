@@ -12,7 +12,7 @@ const REDIS_CONF = {
 }
 
 // create a client
-const redisClient = isProd ? redis.createClient(process.env.REDIS_CONF)
+const redisClient = isProd ? redis.createClient(process.env.REDIS_URL)
   : redis.createClient(REDIS_CONF.port, REDIS_CONF.host)
 redisClient.on('error', err => {
   console.log('redis error', err)
