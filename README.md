@@ -35,16 +35,21 @@ Possible features
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/post_blog.png" width=400 height=400>
 
 * Setting 
-<img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting_nav.png" width=400 height=400>
+<img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting_nav.png" width=600 height=400>
 &nbsp;&nbsp;&nbsp;&nbsp;Account setting: You can change your username, avatar and pasword by clicking the "Account setting"
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting.png" width=400 height=400>
 &nbsp;&nbsp;&nbsp;&nbsp;Logout: You can log out by clicking the "Logout" button in the dropdown
+
 &nbsp;&nbsp;&nbsp;&nbsp;You'll see a message when your session expired at which time you should login again.The expiration time is one hour.
 
-- Profile page
+- Profile page: You can your own blogs in the profile page, the last five blogs will be shown.
+<img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/own_blog_list.png" width=500 height=400>
+&nbsp;&nbsp;&nbsp;&nbsp;You can click the "Click to load more" button to see more blogs.
+<img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/own_blog_list_end.png" width=600 height=400>
 
-- Discover page
-
+- Discover page: You can see blogs of all users in the discover page
+<img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/discover.png" width=500 height=400>
+&nbsp;&nbsp;&nbsp;&nbsp;You can see blogs or a certain user by clicking his username. 
 
 ### For development
 - Clone the repository
