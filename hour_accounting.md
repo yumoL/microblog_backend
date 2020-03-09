@@ -1,5 +1,5 @@
 # Hour Accounting
-total 69
+total 70
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
