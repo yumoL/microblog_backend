@@ -3,6 +3,7 @@
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/index.png" width=400 height=400>
 
 * Log in: if you already have an account, you can go to the login page by clicking the "Login" in the navigation bar.
+You can log in with the test user (username: user1, password: 123).
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/login.png" width=400 height=400>
 
 * Register: Click the "Register" in the navigation bar to go to the register page. You will be redirected to the login page after registration succeeded.
