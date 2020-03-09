@@ -1,5 +1,5 @@
 # Hour Accounting
-total 69
+total 71.5h
 
 | date  | hours| what did I do  |
 | :----:|:-----| :-----|
@@ -42,3 +42,4 @@ total 69
 | 4.3| 2   | get blogs from redis cache, Discover Page to show blogs of all users|
 |    | 2   | test api to get all blogs from cache, config redis in prouction|
 | 6.3| 0.5 | end-to-end test for discover page|
+| 9.3| 1   | final clean and user guide|
