@@ -28,18 +28,18 @@ Possible features
 
 * Register: Click the "Register" in the navigation bar to go to the register page. You will be redirected to the login page after registration succeeded.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/register_ok.png" width=400 height=400>
-  * Username should be unique, otherwise a warning message will be displayed.
+&nbsp;&nbsp;&nbsp;&nbsp;Username should be unique, otherwise a warning message will be displayed.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/register_existed_username.png" width=400 height=400>
 
 * Home page: After login, you'll be directed to the home page where you can post blogs. You can also add pictures(maximum 3) with your blog.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/post_blog.png" width=400 height=400>
 
-* Setting
+* Setting 
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting_nav.png" width=400 height=400>
-  * Account setting: You can change your username, avatar and pasword by clicking the "Account setting"
+&nbsp;&nbsp;&nbsp;&nbsp;Account setting: You can change your username, avatar and pasword by clicking the "Account setting"
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/setting.png" width=400 height=400>
-  * Logout: You can log out by clicking the "Logout" button in the dropdown
-  * You'll see a message when your session expired at which time you should login again.The expiration time is one hour.
+&nbsp;&nbsp;&nbsp;&nbsp;Logout: You can log out by clicking the "Logout" button in the dropdown
+&nbsp;&nbsp;&nbsp;&nbsp;You'll see a message when your session expired at which time you should login again.The expiration time is one hour.
 
 - Profile page
 
