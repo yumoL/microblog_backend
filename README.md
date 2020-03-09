@@ -70,7 +70,11 @@ If you haven't installed docker or docker-compose, please check the download ins
 
 `npm run dev`
 
-The app will start at http://localhost:3003
+The app will server will listen at http://localhost:3003
+
+- Build UI
+Make sure this repository and the repository of [client](https://github.com/yumoL/microblog_client) are in the same directory, and then use `npm run build:ui`(in the root of this repository) to create a production build of the UI.
+After production build you can start your app at http://localhost:3003. 
 
 ### For testing
 #### Unit testing
