@@ -19,7 +19,7 @@ Possible features
 
 [Hour Accounting](https://github.com/yumoL/microblog_backend/blob/master/hour_accounting.md)
 
-[User Guide](https://github.com/yumoL/microblog_backend/tree/master)
+[User Guide](https://github.com/yumoL/microblog_backend/blob/master/user_guide.md)
 
 ### For development
 - Clone the repository
