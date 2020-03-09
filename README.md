@@ -49,7 +49,7 @@ Possible features
 
 - Discover page: You can see blogs of all users in the discover page
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/discover.png" width=500 height=400>
-&nbsp;&nbsp;&nbsp;&nbsp;You can see blogs or a certain user by clicking his username. 
+&nbsp;&nbsp;&nbsp;&nbsp;You can see blogs of a certain user by clicking his username. 
 
 ### For development
 - Clone the repository
