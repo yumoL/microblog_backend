@@ -41,13 +41,14 @@ Possible features
 &nbsp;&nbsp;&nbsp;&nbsp;Logout: You can log out by clicking the "Logout" button in the dropdown
 
 &nbsp;&nbsp;&nbsp;&nbsp;You'll see a message when your session expired at which time you should login again.The expiration time is one hour.
+<img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/timeout.png" width=600 height=400>
 
 - Profile page: You can your own blogs in the profile page, the last five blogs will be shown. You can click a image to zoom it (same as in discover page).
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/own_blog_list.png" width=500 height=400>
 &nbsp;&nbsp;&nbsp;&nbsp;You can click the "Click to load more" button to see more blogs.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/own_blog_list_end.png" width=600 height=400>
 
-- Discover page: You can see blogs of all users in the discover page.
+- Discover page: You can see blogs of all users in the discover page. The app tries to get these blogs from redis cache whose expiration time is 1 minute, so the newest blog will be seen in 1 minute after it's publish time.
 <img src="https://github.com/yumoL/microblog_backend/blob/master/user_guide_image/discover.png" width=500 height=400>
 &nbsp;&nbsp;&nbsp;&nbsp;You can see blogs of a certain user by clicking his username. 
 
